@@ -50,54 +50,66 @@ proxies:
   up: 11
   down: 55
   hop_interval: 10
-- name: None vless 21
-  type: vless
+- name: None vmess 21
+  type: vmess
   server: 104.26.9.12
-  port: 80
-  uuid: 1a62379a-e160-45a3-8361-3e6b5021d192
-  tls: false
-  servername: giving-hide-provisions-corrected.trycloudflare.com
+  port: 8443
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
   network: ws
+  servername: funk-england-indirect-gospel.trycloudflare.com
   ws-opts:
-    path: /argox-vl?ed=2048
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
     headers:
-      host: giving-hide-provisions-corrected.trycloudflare.com
-- name: None vless 22
-  type: vless
+      Host: funk-england-indirect-gospel.trycloudflare.com
+- name: None vmess 22
+  type: vmess
   server: 104.19.21.24
-  port: 80
-  uuid: 1a62379a-e160-45a3-8361-3e6b5021d192
+  port: 8880
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  udp: true
   tls: false
-  servername: giving-hide-provisions-corrected.trycloudflare.com
   network: ws
+  servername: funk-england-indirect-gospel.trycloudflare.com
   ws-opts:
-    path: /argox-vl?ed=2048
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
     headers:
-      host: giving-hide-provisions-corrected.trycloudflare.com
-- name: None vless 23
-  type: vless
+      Host: funk-england-indirect-gospel.trycloudflare.com
+- name: None vmess 23
+  type: vmess
   server: 104.26.9.54
-  port: 80
-  uuid: 1a62379a-e160-45a3-8361-3e6b5021d192
-  tls: false
-  servername: giving-hide-provisions-corrected.trycloudflare.com
+  port: 8443
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
   network: ws
+  servername: funk-england-indirect-gospel.trycloudflare.com
   ws-opts:
-    path: /argox-vl?ed=2048
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
     headers:
-      host: giving-hide-provisions-corrected.trycloudflare.com
-- name: None vless 24
-  type: vless
+      Host: funk-england-indirect-gospel.trycloudflare.com
+- name: None vmess 24
+  type: vmess
   server: 104.19.38.28
-  port: 80
-  uuid: 1a62379a-e160-45a3-8361-3e6b5021d192
+  port: 8880
+  uuid: 028c8131-9e3e-4836-94ac-ea7f24d4d05a
+  alterId: 0
+  cipher: auto
+  udp: true
   tls: false
-  servername: giving-hide-provisions-corrected.trycloudflare.com
   network: ws
+  servername: funk-england-indirect-gospel.trycloudflare.com
   ws-opts:
-    path: /argox-vl?ed=2048
+    path: 028c8131-9e3e-4836-94ac-ea7f24d4d05a-vm
     headers:
-      host: giving-hide-provisions-corrected.trycloudflare.com
+      Host: funk-england-indirect-gospel.trycloudflare.com
 - name: None vmess 31
   type: vmess
   server: 104.26.9.22
@@ -361,10 +373,10 @@ proxy-groups:
   - DIRECT
   - United States tuic 01
   - United States hysteria 11
-  - None vless 21
-  - None vless 22
-  - None vless 23
-  - None vless 24
+  - None vmess 21
+  - None vmess 22
+  - None vmess 23
+  - None vmess 24
   - None vmess 31
   - United States vmess 32
   - None vmess 33
@@ -391,10 +403,10 @@ proxy-groups:
   proxies:
   - United States tuic 01
   - United States hysteria 11
-  - None vless 21
-  - None vless 22
-  - None vless 23
-  - None vless 24
+  - None vmess 21
+  - None vmess 22
+  - None vmess 23
+  - None vmess 24
   - None vmess 31
   - United States vmess 32
   - None vmess 33
