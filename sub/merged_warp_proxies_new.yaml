@@ -71,9 +71,9 @@ proxies:
     path: /9aqOiXD2/
     headers:
       Host: ip001.freegradely.xyz
-- name: None vmess 03
+- name: Canada vmess 03
   type: vmess
-  server: 162.159.128.118
+  server: 23.227.38.3
   port: 8080
   uuid: ffaba3ee-4070-4590-9959-d863f9a4c6de
   alterId: 0
@@ -116,9 +116,9 @@ proxies:
     path: d726eb31-0c9e-49f9-8968-59c06f4ea15c-vm
     headers:
       Host: remaining-criminal-douglas-idol.trycloudflare.com
-- name: None vmess 12
+- name: Canada vmess 12
   type: vmess
-  server: 162.159.136.23
+  server: 23.227.38.3
   port: 8880
   uuid: d726eb31-0c9e-49f9-8968-59c06f4ea15c
   alterId: 0
@@ -176,9 +176,9 @@ proxies:
     path: 29eebb60-b27b-4a9d-bba5-947763d9205e-vm
     headers:
       Host: ip002.freegradely.xyz
-- name: None vmess 22
+- name: Canada vmess 22
   type: vmess
-  server: 162.159.136.33
+  server: 23.227.38.5
   port: 2086
   uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
   alterId: 0
@@ -251,9 +251,9 @@ proxies:
     path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
     headers:
       host: luther-soon-uploaded-anxiety.trycloudflare.com
-- name: None vmess 33
+- name: Canada vmess 33
   type: vmess
-  server: 104.19.38.28
+  server: 23.227.38.7
   port: 8080
   cipher: auto
   uuid: ef8c954e-014f-4b36-8273-9b5086afab34
@@ -296,9 +296,9 @@ proxies:
     path: 29eebb60-b27b-4a9d-bba5-947763d9205e-vm
     headers:
       Host: ip002.freegradely.xyz
-- name: None vmess 42
+- name: Canada vmess 42
   type: vmess
-  server: 162.159.136.33
+  server: 23.227.38.6
   port: 2086
   uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
   alterId: 0
@@ -390,7 +390,7 @@ proxies:
       down: 55
 - name: None vmess 71
   type: vmess
-  server: 162.159.129.111
+  server: 104.16.149.222
   port: 2095
   uuid: e9555d84-a146-4e36-9c23-eac28387be48
   alterId: 0
@@ -403,9 +403,9 @@ proxies:
     path: /WNh8bXQv/
     headers:
       Host: ip5.freegradely.xyz
-- name: None vmess 72
+- name: Canada vmess 72
   type: vmess
-  server: 162.159.136.208
+  server: 23.227.38.8
   port: 2095
   uuid: e9555d84-a146-4e36-9c23-eac28387be48
   alterId: 0
@@ -601,28 +601,28 @@ proxy-groups:
   proxies:
   - None vmess 01
   - United States vmess 02
-  - None vmess 03
+  - Canada vmess 03
   - None vmess 04
   - None vmess 11
-  - None vmess 12
+  - Canada vmess 12
   - None vmess 13
   - None vmess 14
   - None vmess 21
-  - None vmess 22
+  - Canada vmess 22
   - None vmess 23
   - None vmess 24
   - None vmess 31
   - United States vmess 32
-  - None vmess 33
+  - Canada vmess 33
   - None vmess 34
   - None vmess 41
-  - None vmess 42
+  - Canada vmess 42
   - None vmess 43
   - None vmess 44
   - United States vless 51
   - United States ss 61
   - None vmess 71
-  - None vmess 72
+  - Canada vmess 72
   - United States vmess 73
   - None vmess 74
   - United States vless 81
@@ -640,28 +640,28 @@ proxy-groups:
   proxies:
   - None vmess 01
   - United States vmess 02
-  - None vmess 03
+  - Canada vmess 03
   - None vmess 04
   - None vmess 11
-  - None vmess 12
+  - Canada vmess 12
   - None vmess 13
   - None vmess 14
   - None vmess 21
-  - None vmess 22
+  - Canada vmess 22
   - None vmess 23
   - None vmess 24
   - None vmess 31
   - United States vmess 32
-  - None vmess 33
+  - Canada vmess 33
   - None vmess 34
   - None vmess 41
-  - None vmess 42
+  - Canada vmess 42
   - None vmess 43
   - None vmess 44
   - United States vless 51
   - United States ss 61
   - None vmess 71
-  - None vmess 72
+  - Canada vmess 72
   - United States vmess 73
   - None vmess 74
   - United States vless 81
@@ -679,28 +679,28 @@ proxy-groups:
   proxies:
   - None vmess 01
   - United States vmess 02
-  - None vmess 03
+  - Canada vmess 03
   - None vmess 04
   - None vmess 11
-  - None vmess 12
+  - Canada vmess 12
   - None vmess 13
   - None vmess 14
   - None vmess 21
-  - None vmess 22
+  - Canada vmess 22
   - None vmess 23
   - None vmess 24
   - None vmess 31
   - United States vmess 32
-  - None vmess 33
+  - Canada vmess 33
   - None vmess 34
   - None vmess 41
-  - None vmess 42
+  - Canada vmess 42
   - None vmess 43
   - None vmess 44
   - United States vless 51
   - United States ss 61
   - None vmess 71
-  - None vmess 72
+  - Canada vmess 72
   - United States vmess 73
   - None vmess 74
   - United States vless 81
