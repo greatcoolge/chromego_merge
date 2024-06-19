@@ -109,7 +109,7 @@
         "🇺🇸 United States hysteria2 3",
         "None vless 1",
         "None vless 2",
-        "🇺🇸 United States vless 3"
+        "None vless 3"
       ]
     },
     {
@@ -355,8 +355,7 @@
         "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
-        "🇺🇸 United States hysteria2 3",
-        "🇺🇸 United States vless 3"
+        "🇺🇸 United States hysteria2 3"
       ]
     },
     {
@@ -368,7 +367,8 @@
         "🇫🇷 France hy 2",
         "🇫🇷 France hy 3",
         "None vless 1",
-        "None vless 2"
+        "None vless 2",
+        "None vless 3"
       ]
     },
     {
@@ -387,7 +387,7 @@
         "🇺🇸 United States hysteria2 3",
         "None vless 1",
         "None vless 2",
-        "🇺🇸 United States vless 3"
+        "None vless 3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -636,7 +636,7 @@
       }
     },
     {
-      "tag": "🇺🇸 United States vless 3",
+      "tag": "None vless 3",
       "type": "vless",
       "server": "yh7.dtku41.xyz",
       "server_port": 443,
