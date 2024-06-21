@@ -56,9 +56,9 @@ proxies:
     path: e9e3cc13-db48-4cc1-8c24-7626439a5339-vm
     headers:
       Host: ip11.freegradely.xyz
-- name: United States vmess 02
+- name: None vmess 02
   type: vmess
-  server: 172.64.169.160
+  server: 104.26.0.56
   port: 2086
   uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
   alterId: 0
@@ -407,9 +407,9 @@ proxies:
     path: d726eb31-0c9e-49f9-8968-59c06f4ea15c-vm
     headers:
       Host: ip5-4.freegradely.xyz
-- name: United States vmess 73
+- name: None vmess 73
   type: vmess
-  server: 172.64.144.66
+  server: 104.26.0.50
   port: 2086
   uuid: d726eb31-0c9e-49f9-8968-59c06f4ea15c
   alterId: 0
@@ -583,7 +583,7 @@ proxy-groups:
   tolerance: 50
   proxies:
   - None vmess 01
-  - United States vmess 02
+  - None vmess 02
   - Canada vmess 03
   - None vmess 04
   - None vmess 11
@@ -606,7 +606,7 @@ proxy-groups:
   - United States tuic 61
   - None vmess 71
   - Canada vmess 72
-  - United States vmess 73
+  - None vmess 73
   - None vmess 74
   - United States vless 81
   - United States tuic 91
@@ -622,7 +622,7 @@ proxy-groups:
   type: select
   proxies:
   - None vmess 01
-  - United States vmess 02
+  - None vmess 02
   - Canada vmess 03
   - None vmess 04
   - None vmess 11
@@ -645,7 +645,7 @@ proxy-groups:
   - United States tuic 61
   - None vmess 71
   - Canada vmess 72
-  - United States vmess 73
+  - None vmess 73
   - None vmess 74
   - United States vless 81
   - United States tuic 91
@@ -661,7 +661,7 @@ proxy-groups:
   type: load-balance
   proxies:
   - None vmess 01
-  - United States vmess 02
+  - None vmess 02
   - Canada vmess 03
   - None vmess 04
   - None vmess 11
@@ -684,7 +684,7 @@ proxy-groups:
   - United States tuic 61
   - None vmess 71
   - Canada vmess 72
-  - United States vmess 73
+  - None vmess 73
   - None vmess 74
   - United States vless 81
   - United States tuic 91
