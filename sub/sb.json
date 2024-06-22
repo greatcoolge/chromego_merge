@@ -108,10 +108,7 @@
         "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
-        "🇺🇸 United States hysteria2 3",
-        "None vless 1",
-        "None vless 2",
-        "🇺🇸 United States vless 3"
+        "🇺🇸 United States hysteria2 3"
       ]
     },
     {
@@ -359,8 +356,7 @@
         "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
-        "🇺🇸 United States hysteria2 3",
-        "🇺🇸 United States vless 3"
+        "🇺🇸 United States hysteria2 3"
       ]
     },
     {
@@ -370,9 +366,7 @@
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
         "🇫🇷 France hy 2",
-        "🇫🇷 France hy 3",
-        "None vless 1",
-        "None vless 2"
+        "🇫🇷 France hy 3"
       ]
     },
     {
@@ -390,10 +384,7 @@
         "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
-        "🇺🇸 United States hysteria2 3",
-        "None vless 1",
-        "None vless 2",
-        "🇺🇸 United States vless 3"
+        "🇺🇸 United States hysteria2 3"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -629,78 +620,6 @@
         "alpn": [
           "h3"
         ]
-      }
-    },
-    {
-      "tag": "None vless 1",
-      "type": "vless",
-      "server": "yh4.dtku41.xyz",
-      "server_port": 443,
-      "uuid": "ebfdccb6-7416-4b6e-860d-98587344d500",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "lg1.freessr2.xyz",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/xyakws",
-        "headers": {
-          "Host": "lg1.freessr2.xyz"
-        }
-      }
-    },
-    {
-      "tag": "None vless 2",
-      "type": "vless",
-      "server": "yh1.dtku41.xyz",
-      "server_port": 443,
-      "uuid": "ebfdccb6-7416-4b6e-860d-98587344d500",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "lg1.freessr2.xyz",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/xyakws",
-        "headers": {
-          "Host": "lg1.freessr2.xyz"
-        }
-      }
-    },
-    {
-      "tag": "🇺🇸 United States vless 3",
-      "type": "vless",
-      "server": "yh7.dtku41.xyz",
-      "server_port": 443,
-      "uuid": "ebfdccb6-7416-4b6e-860d-98587344d500",
-      "packet_encoding": "xudp",
-      "tls": {
-        "enabled": true,
-        "insecure": false,
-        "server_name": "lg1.freessr2.xyz",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/xyakws",
-        "headers": {
-          "Host": "lg1.freessr2.xyz"
-        }
       }
     }
   ],
