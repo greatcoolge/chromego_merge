@@ -97,6 +97,7 @@
       "outbounds": [
         "auto",
         "direct",
+        "🇺🇸 United States hysteria 9",
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
         "🇫🇷 France hy 2",
@@ -345,6 +346,7 @@
       "tag": "America",
       "type": "selector",
       "outbounds": [
+        "🇺🇸 United States hysteria 9",
         "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
@@ -365,6 +367,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
+        "🇺🇸 United States hysteria 9",
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
         "🇫🇷 France hy 2",
@@ -389,6 +392,23 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "tag": "🇺🇸 United States hysteria 9",
+      "type": "hysteria",
+      "server": "23.170.40.77",
+      "server_port": 30009,
+      "up_mbps": 50,
+      "down_mbps": 80,
+      "auth_str": "",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true,
+        "alpn": [
+          "h3"
+        ]
+      }
     },
     {
       "tag": "🇫🇷 France hy 0",
