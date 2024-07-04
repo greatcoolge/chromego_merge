@@ -51,11 +51,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 02
   type: vmess
   server: 104.26.0.56
@@ -66,11 +66,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: Canada vmess 03
   type: vmess
   server: 23.227.38.3
@@ -81,11 +81,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 04
   type: vmess
   server: 104.19.38.12
@@ -96,11 +96,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: United States vmess 05
   type: vmess
   server: 172.64.175.88
@@ -111,11 +111,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: United States vmess 06
   type: vmess
   server: 172.64.99.22
@@ -126,11 +126,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 07
   type: vmess
   server: 104.19.21.71
@@ -141,11 +141,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: United States vmess 08
   type: vmess
   server: 172.64.175.213
@@ -156,11 +156,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: United States vmess 09
   type: vmess
   server: 172.64.198.249
@@ -171,11 +171,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: United States vmess 010
   type: vmess
   server: 172.64.194.76
@@ -186,11 +186,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 011
   type: vmess
   server: 104.19.21.63
@@ -201,11 +201,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 012
   type: vmess
   server: 104.19.123.11
@@ -216,11 +216,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 013
   type: vmess
   server: 104.18.57.111
@@ -231,11 +231,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 014
   type: vmess
   server: 104.19.21.230
@@ -246,11 +246,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 015
   type: vmess
   server: 104.19.21.230
@@ -261,11 +261,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 016
   type: vmess
   server: 104.19.46.103
@@ -276,11 +276,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 017
   type: vmess
   server: 104.19.32.216
@@ -291,11 +291,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 018
   type: vmess
   server: 104.19.47.65
@@ -306,11 +306,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 019
   type: vmess
   server: 104.19.58.175
@@ -321,11 +321,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 020
   type: vmess
   server: 104.19.55.49
@@ -336,11 +336,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 021
   type: vmess
   server: 104.19.42.49
@@ -351,11 +351,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 022
   type: vmess
   server: 104.17.106.151
@@ -366,11 +366,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 023
   type: vmess
   server: 104.19.57.4
@@ -381,11 +381,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 024
   type: vmess
   server: 104.19.59.89
@@ -396,11 +396,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 025
   type: vmess
   server: 104.20.17.186
@@ -411,11 +411,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 026
   type: vmess
   server: 104.20.25.146
@@ -426,11 +426,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 027
   type: vmess
   server: 104.20.25.146
@@ -441,11 +441,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 028
   type: vmess
   server: 104.26.7.132
@@ -456,11 +456,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 029
   type: vmess
   server: 104.20.25.146
@@ -471,11 +471,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 030
   type: vmess
   server: 104.20.17.186
@@ -486,11 +486,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 031
   type: vmess
   server: 104.19.45.11
@@ -501,11 +501,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 032
   type: vmess
   server: 104.19.45.13
@@ -516,11 +516,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 033
   type: vmess
   server: 104.19.45.15
@@ -531,11 +531,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 034
   type: vmess
   server: 104.19.45.17
@@ -546,11 +546,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 035
   type: vmess
   server: 104.19.45.19
@@ -561,11 +561,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 036
   type: vmess
   server: 104.19.45.31
@@ -576,11 +576,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 037
   type: vmess
   server: 104.19.45.35
@@ -591,11 +591,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 038
   type: vmess
   server: 104.19.45.42
@@ -606,11 +606,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 039
   type: vmess
   server: 104.19.45.47
@@ -621,11 +621,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 040
   type: vmess
   server: 104.19.45.50
@@ -636,11 +636,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 041
   type: vmess
   server: 104.19.45.90
@@ -651,11 +651,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 042
   type: vmess
   server: 104.19.46.17
@@ -666,11 +666,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 043
   type: vmess
   server: 104.19.46.22
@@ -681,11 +681,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 044
   type: vmess
   server: 104.19.46.27
@@ -696,11 +696,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 045
   type: vmess
   server: 104.19.46.33
@@ -711,11 +711,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 046
   type: vmess
   server: 104.19.46.36
@@ -726,11 +726,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 047
   type: vmess
   server: 104.19.46.39
@@ -741,11 +741,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 048
   type: vmess
   server: 104.19.46.42
@@ -756,11 +756,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 049
   type: vmess
   server: 104.19.46.56
@@ -771,11 +771,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 050
   type: vmess
   server: 104.19.46.59
@@ -786,11 +786,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 051
   type: vmess
   server: 104.19.46.63
@@ -801,11 +801,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 052
   type: vmess
   server: 104.19.47.22
@@ -816,11 +816,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 053
   type: vmess
   server: 104.19.47.27
@@ -831,11 +831,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 054
   type: vmess
   server: 104.19.47.32
@@ -846,11 +846,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 055
   type: vmess
   server: 104.19.47.36
@@ -861,11 +861,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 056
   type: vmess
   server: 104.19.47.45
@@ -876,11 +876,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 057
   type: vmess
   server: 104.19.47.77
@@ -891,11 +891,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 058
   type: vmess
   server: 104.19.47.79
@@ -906,11 +906,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 059
   type: vmess
   server: 104.19.47.88
@@ -921,11 +921,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 060
   type: vmess
   server: 104.19.47.80
@@ -936,11 +936,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 061
   type: vmess
   server: 104.19.47.122
@@ -951,11 +951,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip14.freegradely.xyz
+  servername: ip1.1457230.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip14.freegradely.xyz
+      Host: ip1.1457230.xyz
 - name: None vmess 11
   type: vmess
   server: 104.19.38.18
