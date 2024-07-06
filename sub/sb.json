@@ -97,6 +97,7 @@
       "outbounds": [
         "auto",
         "direct",
+        "🇫🇷 France tuic 1",
         "🇺🇸 United States hysteria 9",
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
@@ -357,6 +358,7 @@
       "tag": "Others",
       "type": "selector",
       "outbounds": [
+        "🇫🇷 France tuic 1",
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
         "🇫🇷 France hy 2",
@@ -367,6 +369,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
+        "🇫🇷 France tuic 1",
         "🇺🇸 United States hysteria 9",
         "🇫🇷 France hy 0",
         "🇫🇷 France hy 1",
@@ -392,6 +395,25 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "tag": "🇫🇷 France tuic 1",
+      "type": "tuic",
+      "server": "51.159.34.216",
+      "server_port": 33445,
+      "uuid": "1607c99b-7df5-4b58-a315-a440f9afde40",
+      "password": "dongtaiwang.com",
+      "congestion_control": "bbr",
+      "udp_relay_mode": "native",
+      "zero_rtt_handshake": false,
+      "heartbeat": "10s",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "insecure": false
+      }
     },
     {
       "tag": "🇺🇸 United States hysteria 9",

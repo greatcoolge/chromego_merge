@@ -1768,13 +1768,13 @@ proxies:
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
-- name: United States hysteria2 1
+- name: France hysteria2 1
   type: hysteria2
-  server: 166.88.159.24
-  port: 40931
+  server: 51.159.2.179
+  port: 23499
   password: dongtaiwang.com
   fast-open: true
-  sni: www.bing.com
+  sni: bing.com
   skip-cert-verify: true
 - name: United States hysteria2 2
   type: hysteria2
@@ -1930,7 +1930,7 @@ proxy-groups:
   - France hysteria 2
   - France hysteria 3
   - United States hysteria2 0
-  - United States hysteria2 1
+  - France hysteria2 1
   - United States hysteria2 2
   - United States hysteria2 3
 - name: 手动选择
@@ -2053,7 +2053,7 @@ proxy-groups:
   - France hysteria 2
   - France hysteria 3
   - United States hysteria2 0
-  - United States hysteria2 1
+  - France hysteria2 1
   - United States hysteria2 2
   - United States hysteria2 3
 - name: 负载均衡
@@ -2176,7 +2176,7 @@ proxy-groups:
   - France hysteria 2
   - France hysteria 3
   - United States hysteria2 0
-  - United States hysteria2 1
+  - France hysteria2 1
   - United States hysteria2 2
   - United States hysteria2 3
   url: http://www.gstatic.com/generate_204
