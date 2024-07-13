@@ -98,10 +98,10 @@
         "auto",
         "direct",
         "🇺🇸 United States hysteria 9",
-        "🇫🇷 France hy 0",
-        "🇫🇷 France hy 1",
-        "🇫🇷 France hy 2",
-        "🇫🇷 France hy 3",
+        "🇺🇸 United States hy 0",
+        "🇺🇸 United States hy 1",
+        "🇺🇸 United States hy 2",
+        "🇺🇸 United States hy 3",
         "🇫🇷 France hysteria2 0",
         "🇫🇷 France hysteria2 1",
         "🇫🇷 France hysteria2 2",
@@ -346,17 +346,17 @@
       "tag": "America",
       "type": "selector",
       "outbounds": [
-        "🇺🇸 United States hysteria 9"
+        "🇺🇸 United States hysteria 9",
+        "🇺🇸 United States hy 0",
+        "🇺🇸 United States hy 1",
+        "🇺🇸 United States hy 2",
+        "🇺🇸 United States hy 3"
       ]
     },
     {
       "tag": "Others",
       "type": "selector",
       "outbounds": [
-        "🇫🇷 France hy 0",
-        "🇫🇷 France hy 1",
-        "🇫🇷 France hy 2",
-        "🇫🇷 France hy 3",
         "🇫🇷 France hysteria2 0",
         "🇫🇷 France hysteria2 1",
         "🇫🇷 France hysteria2 2",
@@ -368,10 +368,10 @@
       "type": "urltest",
       "outbounds": [
         "🇺🇸 United States hysteria 9",
-        "🇫🇷 France hy 0",
-        "🇫🇷 France hy 1",
-        "🇫🇷 France hy 2",
-        "🇫🇷 France hy 3",
+        "🇺🇸 United States hy 0",
+        "🇺🇸 United States hy 1",
+        "🇺🇸 United States hy 2",
+        "🇺🇸 United States hy 3",
         "🇫🇷 France hysteria2 0",
         "🇫🇷 France hysteria2 1",
         "🇫🇷 France hysteria2 2",
@@ -411,10 +411,10 @@
       }
     },
     {
-      "tag": "🇫🇷 France hy 0",
+      "tag": "🇺🇸 United States hy 0",
       "type": "hysteria",
-      "server": "62.210.243.131",
-      "server_port": 18702,
+      "server": "104.192.224.139",
+      "server_port": 42113,
       "up_mbps": 11,
       "down_mbps": 55,
       "auth_str": "dongtaiwang.com",
@@ -428,10 +428,10 @@
       }
     },
     {
-      "tag": "🇫🇷 France hy 1",
+      "tag": "🇺🇸 United States hy 1",
       "type": "hysteria",
-      "server": "62.210.243.131",
-      "server_port": 18702,
+      "server": "104.192.224.139",
+      "server_port": 42113,
       "up_mbps": 11,
       "down_mbps": 55,
       "auth_str": "dongtaiwang.com",
@@ -445,10 +445,10 @@
       }
     },
     {
-      "tag": "🇫🇷 France hy 2",
+      "tag": "🇺🇸 United States hy 2",
       "type": "hysteria",
-      "server": "62.210.243.131",
-      "server_port": 18702,
+      "server": "104.192.224.139",
+      "server_port": 42113,
       "up_mbps": 11,
       "down_mbps": 55,
       "auth_str": "dongtaiwang.com",
@@ -462,10 +462,10 @@
       }
     },
     {
-      "tag": "🇫🇷 France hy 3",
+      "tag": "🇺🇸 United States hy 3",
       "type": "hysteria",
-      "server": "62.210.243.131",
-      "server_port": 18702,
+      "server": "104.192.224.139",
+      "server_port": 42113,
       "up_mbps": 11,
       "down_mbps": 55,
       "auth_str": "dongtaiwang.com",
