@@ -97,6 +97,7 @@
       "outbounds": [
         "auto",
         "direct",
+        "🇹🇼 Taiwan tuic 8",
         "🇺🇸 United States hysteria 9",
         "🇺🇸 United States hy 0",
         "🇺🇸 United States hy 1",
@@ -325,7 +326,7 @@
       "tag": "TaiWan",
       "type": "selector",
       "outbounds": [
-        "Proxy"
+        "🇹🇼 Taiwan tuic 8"
       ]
     },
     {
@@ -367,6 +368,7 @@
       "tag": "auto",
       "type": "urltest",
       "outbounds": [
+        "🇹🇼 Taiwan tuic 8",
         "🇺🇸 United States hysteria 9",
         "🇺🇸 United States hy 0",
         "🇺🇸 United States hy 1",
@@ -392,6 +394,25 @@
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "tag": "🇹🇼 Taiwan tuic 8",
+      "type": "tuic",
+      "server": "www2.dtku44.xyz",
+      "server_port": 11224,
+      "uuid": "285524a5-18ae-4bf4-8e89-473dfdc3a212",
+      "password": "dongtaiwang.com",
+      "congestion_control": "bbr",
+      "udp_relay_mode": "native",
+      "zero_rtt_handshake": false,
+      "heartbeat": "10s",
+      "tls": {
+        "enabled": true,
+        "alpn": [
+          "h3"
+        ],
+        "insecure": false
+      }
     },
     {
       "tag": "🇺🇸 United States hysteria 9",
