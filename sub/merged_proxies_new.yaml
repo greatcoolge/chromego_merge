@@ -1495,7 +1495,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 099
+- name: None vmess 099
   type: vmess
   server: singapore.com
   port: 2086
@@ -1510,7 +1510,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 0100
+- name: None vmess 0100
   type: vmess
   server: skk.moe
   port: 2086
@@ -2196,16 +2196,16 @@ proxies:
     host: nijigen-works.jp
     password: K+NtA/8R8MTQ9vyZAd0kzUYJkwQmQBkUIQmwa2Po8cM=
     version: 3
-- name: United States ss 61
+- name: France ss 61
   type: ss
-  server: 23.170.40.77
+  server: 51.159.2.179
   port: 443
   cipher: 2022-blake3-chacha20-poly1305
-  password: CmUP/cj9LY2W4bsBUV7mG8ujmMcCOzt+b4un9xnLuro=
+  password: EJhF7SAs95JSRDFE54wyjr79GvKPEm7w0qLpMh6T0aM=
   plugin: shadow-tls
   plugin-opts:
     host: nijigen-works.jp
-    password: K+NtA/8R8MTQ9vyZAd0kzUYJkwQmQBkUIQmwa2Po8cM=
+    password: QuLaE7p3W+ZSOvK/q5G5zRV0UEBEefflZENLW6MZPFI=
     version: 3
 - name: None vmess 71
   type: vmess
@@ -2279,24 +2279,22 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
-- name: United States hysteria 91
-  type: hysteria
-  server: 23.170.40.77
-  port: 30009
-  sni: bing.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-  protocol: udp
-  auth_str: dongtaiwang.com
-  up: 11
-  down: 55
-  hop_interval: 10
+- name: France ss 91
+  type: ss
+  server: 51.159.2.179
+  port: 443
+  cipher: 2022-blake3-chacha20-poly1305
+  password: EJhF7SAs95JSRDFE54wyjr79GvKPEm7w0qLpMh6T0aM=
+  plugin: shadow-tls
+  plugin-opts:
+    host: nijigen-works.jp
+    password: QuLaE7p3W+ZSOvK/q5G5zRV0UEBEefflZENLW6MZPFI=
+    version: 3
 - name: United States hysteria 0
   type: hysteria
-  server: 104.192.224.139
-  port: 42113
-  ports: 42113
+  server: 166.1.18.52
+  port: 41363
+  ports: 41363
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2336,9 +2334,9 @@ proxies:
   - h3
 - name: United States hysteria 3
   type: hysteria
-  server: 104.192.224.139
-  port: 42113
-  ports: 42113
+  server: 166.1.18.52
+  port: 41363
+  ports: 41363
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2348,18 +2346,18 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: France hysteria2 0
+- name: United States hysteria2 0
   type: hysteria2
-  server: 51.159.2.179
-  port: 23499
+  server: 38.114.103.210
+  port: 30647
   password: dongtaiwang.com
   fast-open: true
   sni: bing.com
   skip-cert-verify: true
-- name: France hysteria2 1
+- name: United States hysteria2 1
   type: hysteria2
-  server: 51.159.2.179
-  port: 23499
+  server: 38.114.103.210
+  port: 30647
   password: dongtaiwang.com
   fast-open: true
   sni: bing.com
@@ -2484,8 +2482,8 @@ proxy-groups:
   - None vmess 096
   - None vmess 097
   - None vmess 098
-  - United States vmess 099
-  - United States vmess 0100
+  - None vmess 099
+  - None vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
@@ -2531,19 +2529,19 @@ proxy-groups:
   - None vmess 43
   - None vmess 44
   - United States ss 51
-  - United States ss 61
+  - France ss 61
   - None vmess 71
   - Canada vmess 72
   - None vmess 73
   - None vmess 74
   - Taiwan tuic 81
-  - United States hysteria 91
+  - France ss 91
   - United States hysteria 0
   - United States hysteria 1
   - United States hysteria 2
   - United States hysteria 3
-  - France hysteria2 0
-  - France hysteria2 1
+  - United States hysteria2 0
+  - United States hysteria2 1
   - France hysteria2 2
   - France hysteria2 3
 - name: 自动选择
@@ -2650,8 +2648,8 @@ proxy-groups:
   - None vmess 096
   - None vmess 097
   - None vmess 098
-  - United States vmess 099
-  - United States vmess 0100
+  - None vmess 099
+  - None vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
@@ -2697,19 +2695,19 @@ proxy-groups:
   - None vmess 43
   - None vmess 44
   - United States ss 51
-  - United States ss 61
+  - France ss 61
   - None vmess 71
   - Canada vmess 72
   - None vmess 73
   - None vmess 74
   - Taiwan tuic 81
-  - United States hysteria 91
+  - France ss 91
   - United States hysteria 0
   - United States hysteria 1
   - United States hysteria 2
   - United States hysteria 3
-  - France hysteria2 0
-  - France hysteria2 1
+  - United States hysteria2 0
+  - United States hysteria2 1
   - France hysteria2 2
   - France hysteria2 3
 rules:
