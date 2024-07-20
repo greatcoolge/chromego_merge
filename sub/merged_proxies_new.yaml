@@ -1510,7 +1510,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 0100
+- name: United States vmess 0100
   type: vmess
   server: skk.moe
   port: 2086
@@ -2594,7 +2594,7 @@ proxy-groups:
   - None vmess 097
   - None vmess 098
   - None vmess 099
-  - None vmess 0100
+  - United States vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
@@ -2767,7 +2767,7 @@ proxy-groups:
   - None vmess 097
   - None vmess 098
   - None vmess 099
-  - None vmess 0100
+  - United States vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
