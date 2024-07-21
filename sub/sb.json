@@ -101,7 +101,7 @@
         "🇺🇸 United States hy 1",
         "🇺🇸 United States hy 2",
         "🇺🇸 United States hy 3",
-        "🇺🇸 United States hysteria2 0",
+        "🇫🇷 France hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
         "🇺🇸 United States hysteria2 3",
@@ -350,7 +350,6 @@
         "🇺🇸 United States hy 1",
         "🇺🇸 United States hy 2",
         "🇺🇸 United States hy 3",
-        "🇺🇸 United States hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
         "🇺🇸 United States hysteria2 3"
@@ -360,6 +359,7 @@
       "tag": "Others",
       "type": "selector",
       "outbounds": [
+        "🇫🇷 France hysteria2 0",
         "🇫🇷 France vless 0"
       ]
     },
@@ -371,7 +371,7 @@
         "🇺🇸 United States hy 1",
         "🇺🇸 United States hy 2",
         "🇺🇸 United States hy 3",
-        "🇺🇸 United States hysteria2 0",
+        "🇫🇷 France hysteria2 0",
         "🇺🇸 United States hysteria2 1",
         "🇺🇸 United States hysteria2 2",
         "🇺🇸 United States hysteria2 3",
@@ -462,10 +462,10 @@
       }
     },
     {
-      "tag": "🇺🇸 United States hysteria2 0",
+      "tag": "🇫🇷 France hysteria2 0",
       "type": "hysteria2",
-      "server": "38.114.103.210",
-      "server_port": 26288,
+      "server": "51.159.34.216",
+      "server_port": 7571,
       "password": "dongtaiwang.com",
       "up_mbps": 10,
       "down_mbps": 100,
