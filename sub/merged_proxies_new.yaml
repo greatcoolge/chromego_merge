@@ -1465,7 +1465,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 097
+- name: None vmess 097
   type: vmess
   server: malaysia.com
   port: 2086
@@ -2445,32 +2445,32 @@ proxies:
   - h3
 - name: United States hysteria2 0
   type: hysteria2
-  server: hy3.3124845.xyz
-  port: 443
+  server: 207.90.239.157
+  port: 22334
   password: dongtaiwang.com
   fast-open: true
-  sni: hy3.3124845.xyz
-  skip-cert-verify: false
+  sni: bing.com
+  skip-cert-verify: true
 - name: United States hysteria2 1
   type: hysteria2
-  server: 166.1.18.178
-  port: 23456
+  server: 207.90.239.157
+  port: 22334
   password: dongtaiwang.com
   fast-open: true
   sni: bing.com
   skip-cert-verify: true
 - name: United States hysteria2 2
   type: hysteria2
-  server: 166.1.18.178
-  port: 23456
+  server: 207.90.239.157
+  port: 22334
   password: dongtaiwang.com
   fast-open: true
   sni: bing.com
   skip-cert-verify: true
 - name: United States hysteria2 3
   type: hysteria2
-  server: 166.1.18.178
-  port: 23456
+  server: 207.90.239.157
+  port: 22334
   password: dongtaiwang.com
   fast-open: true
   sni: bing.com
@@ -2591,7 +2591,7 @@ proxy-groups:
   - United States vmess 094
   - United States vmess 095
   - None vmess 096
-  - United States vmess 097
+  - None vmess 097
   - None vmess 098
   - None vmess 099
   - None vmess 0100
@@ -2764,7 +2764,7 @@ proxy-groups:
   - United States vmess 094
   - United States vmess 095
   - None vmess 096
-  - United States vmess 097
+  - None vmess 097
   - None vmess 098
   - None vmess 099
   - None vmess 0100
