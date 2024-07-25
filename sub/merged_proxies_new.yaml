@@ -1450,7 +1450,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 096
+- name: None vmess 096
   type: vmess
   server: japan.com
   port: 2086
@@ -1465,7 +1465,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 097
+- name: None vmess 097
   type: vmess
   server: malaysia.com
   port: 2086
@@ -2590,8 +2590,8 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - United States vmess 096
-  - United States vmess 097
+  - None vmess 096
+  - None vmess 097
   - None vmess 098
   - United States vmess 099
   - None vmess 0100
@@ -2763,8 +2763,8 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - United States vmess 096
-  - United States vmess 097
+  - None vmess 096
+  - None vmess 097
   - None vmess 098
   - United States vmess 099
   - None vmess 0100
