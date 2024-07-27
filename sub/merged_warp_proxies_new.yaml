@@ -1511,7 +1511,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 099
+- name: None vmess 099
   type: vmess
   server: singapore.com
   port: 2086
@@ -2624,7 +2624,7 @@ proxy-groups:
   - None vmess 096
   - None vmess 097
   - None vmess 098
-  - United States vmess 099
+  - None vmess 099
   - United States vmess 0100
   - None vmess 0101
   - None vmess 11
@@ -2794,7 +2794,7 @@ proxy-groups:
   - None vmess 096
   - None vmess 097
   - None vmess 098
-  - United States vmess 099
+  - None vmess 099
   - United States vmess 0100
   - None vmess 0101
   - None vmess 11
@@ -2964,7 +2964,7 @@ proxy-groups:
   - None vmess 096
   - None vmess 097
   - None vmess 098
-  - United States vmess 099
+  - None vmess 099
   - United States vmess 0100
   - None vmess 0101
   - None vmess 11
