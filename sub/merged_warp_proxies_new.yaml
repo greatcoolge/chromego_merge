@@ -2091,11 +2091,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip006.dtku47.xyz
+  servername: ip006.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip006.dtku47.xyz
+      Host: ip006.3196772.xyz
 - name: Canada vmess 32
   type: vmess
   server: 23.227.38.6
@@ -2106,11 +2106,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip006.dtku47.xyz
+  servername: ip006.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip006.dtku47.xyz
+      Host: ip006.3196772.xyz
 - name: None vmess 33
   type: vmess
   server: 104.19.51.232
@@ -2121,11 +2121,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip006.dtku47.xyz
+  servername: ip006.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip006.dtku47.xyz
+      Host: ip006.3196772.xyz
 - name: None vmess 34
   type: vmess
   server: 104.19.38.62
@@ -2136,11 +2136,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip006.dtku47.xyz
+  servername: ip006.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip006.dtku47.xyz
+      Host: ip006.3196772.xyz
 - name: None vmess 41
   type: vmess
   server: 104.19.46.233
@@ -2151,11 +2151,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip005.dtku47.xyz
+  servername: ip005.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip005.dtku47.xyz
+      Host: ip005.3196772.xyz
 - name: Canada vmess 42
   type: vmess
   server: 23.227.38.6
@@ -2166,11 +2166,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip005.dtku47.xyz
+  servername: ip005.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip005.dtku47.xyz
+      Host: ip005.3196772.xyz
 - name: None vmess 43
   type: vmess
   server: 104.19.51.232
@@ -2181,11 +2181,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip005.dtku47.xyz
+  servername: ip005.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip005.dtku47.xyz
+      Host: ip005.3196772.xyz
 - name: None vmess 44
   type: vmess
   server: 104.19.38.62
@@ -2196,11 +2196,11 @@ proxies:
   udp: true
   tls: false
   network: ws
-  servername: ip005.dtku47.xyz
+  servername: ip005.3196772.xyz
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: ip005.dtku47.xyz
+      Host: ip005.3196772.xyz
 - name: United States ss 51
   type: ss
   server: 23.170.40.77
