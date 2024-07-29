@@ -1420,7 +1420,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 094
+- name: United States vmess 094
   type: vmess
   server: icook.tw
   port: 2086
@@ -2475,20 +2475,6 @@ proxies:
   fast-open: true
   sni: bing.com
   skip-cert-verify: true
-- name: France vless 0
-  type: vless
-  server: 62.210.101.0
-  port: 23357
-  uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: www.yahoo.com
-  reality-opts:
-    public-key: U5hsLybYWhJrWAqqsTa052k-VeKt8bDFPxBh3CQk51M
-    short-id: 0b4badde
 proxy-groups:
 - name: 节点选择
   type: select
@@ -2588,7 +2574,7 @@ proxy-groups:
   - United States vmess 091
   - None vmess 092
   - Canada vmess 093
-  - None vmess 094
+  - United States vmess 094
   - United States vmess 095
   - None vmess 096
   - None vmess 097
@@ -2661,7 +2647,6 @@ proxy-groups:
   - United States hysteria2 1
   - United States hysteria2 2
   - United States hysteria2 3
-  - France vless 0
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -2761,7 +2746,7 @@ proxy-groups:
   - United States vmess 091
   - None vmess 092
   - Canada vmess 093
-  - None vmess 094
+  - United States vmess 094
   - United States vmess 095
   - None vmess 096
   - None vmess 097
@@ -2834,7 +2819,6 @@ proxy-groups:
   - United States hysteria2 1
   - United States hysteria2 2
   - United States hysteria2 3
-  - France vless 0
 rules:
 - DOMAIN,clash.razord.top,DIRECT
 - DOMAIN,yacd.haishan.me,DIRECT
