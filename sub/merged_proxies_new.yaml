@@ -1510,7 +1510,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 0100
+- name: None vmess 0100
   type: vmess
   server: skk.moe
   port: 2086
@@ -2389,9 +2389,9 @@ proxies:
       Host: ip5-10.freegradely.xyz
 - name: United States hysteria 0
   type: hysteria
-  server: 104.166.125.163
-  port: 11001
-  ports: 11001
+  server: 166.1.221.169
+  port: 11223
+  ports: 11223
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2403,9 +2403,9 @@ proxies:
   - h3
 - name: United States hysteria 1
   type: hysteria
-  server: 104.166.125.163
-  port: 11001
-  ports: 11001
+  server: 166.1.221.169
+  port: 11223
+  ports: 11223
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2417,9 +2417,9 @@ proxies:
   - h3
 - name: United States hysteria 2
   type: hysteria
-  server: 104.166.125.163
-  port: 11001
-  ports: 11001
+  server: 166.1.221.169
+  port: 11223
+  ports: 11223
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2431,9 +2431,9 @@ proxies:
   - h3
 - name: United States hysteria 3
   type: hysteria
-  server: 104.166.125.163
-  port: 11001
-  ports: 11001
+  server: 166.1.221.169
+  port: 11223
+  ports: 11223
   auth_str: dongtaiwang.com
   up: 80
   down: 100
@@ -2580,7 +2580,7 @@ proxy-groups:
   - None vmess 097
   - None vmess 098
   - None vmess 099
-  - United States vmess 0100
+  - None vmess 0100
   - None vmess 0101
   - None vmess 11
   - Canada vmess 12
@@ -2752,7 +2752,7 @@ proxy-groups:
   - None vmess 097
   - None vmess 098
   - None vmess 099
-  - United States vmess 0100
+  - None vmess 0100
   - None vmess 0101
   - None vmess 11
   - Canada vmess 12
