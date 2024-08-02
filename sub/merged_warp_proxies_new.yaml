@@ -1496,7 +1496,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 098
+- name: None vmess 098
   type: vmess
   server: russia.com
   port: 2086
@@ -2609,7 +2609,7 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - United States vmess 098
+  - None vmess 098
   - None vmess 099
   - None vmess 0100
   - None vmess 0101
@@ -2778,7 +2778,7 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - United States vmess 098
+  - None vmess 098
   - None vmess 099
   - None vmess 0100
   - None vmess 0101
@@ -2947,7 +2947,7 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - United States vmess 098
+  - None vmess 098
   - None vmess 099
   - None vmess 0100
   - None vmess 0101
