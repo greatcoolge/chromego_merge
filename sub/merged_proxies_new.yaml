@@ -19,11 +19,6 @@ dns:
   fallback:
   - https://1.0.0.1/dns-query
   - tls://dns.google
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-    - 240.0.0.0/4
 proxies:
 - name: None vmess 01
   type: vmess
@@ -1450,7 +1445,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 096
+- name: United States vmess 096
   type: vmess
   server: japan.com
   port: 2086
@@ -1480,7 +1475,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 098
+- name: United States vmess 098
   type: vmess
   server: russia.com
   port: 2086
@@ -1495,7 +1490,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 099
+- name: United States vmess 099
   type: vmess
   server: singapore.com
   port: 2086
@@ -3040,7 +3035,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 297
+- name: None vmess 297
   type: vmess
   server: malaysia.com
   port: 2086
@@ -3055,7 +3050,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 298
+- name: None vmess 298
   type: vmess
   server: russia.com
   port: 2086
@@ -4630,7 +4625,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 594
+- name: United States vmess 594
   type: vmess
   server: icook.tw
   port: 2086
@@ -4645,7 +4640,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 595
+- name: United States vmess 595
   type: vmess
   server: ip.sb
   port: 2086
@@ -4660,7 +4655,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 596
+- name: None vmess 596
   type: vmess
   server: japan.com
   port: 2086
@@ -4675,7 +4670,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 597
+- name: None vmess 597
   type: vmess
   server: malaysia.com
   port: 2086
@@ -6280,7 +6275,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 799
+- name: United States vmess 799
   type: vmess
   server: singapore.com
   port: 2086
@@ -7720,7 +7715,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: None vmess 894
+- name: United States vmess 894
   type: vmess
   server: icook.tw
   port: 2086
@@ -7780,7 +7775,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip1.1789034.xyz
-- name: United States vmess 898
+- name: None vmess 898
   type: vmess
   server: russia.com
   port: 2086
@@ -8089,10 +8084,10 @@ proxy-groups:
   - Canada vmess 093
   - United States vmess 094
   - United States vmess 095
-  - None vmess 096
+  - United States vmess 096
   - United States vmess 097
-  - None vmess 098
-  - None vmess 099
+  - United States vmess 098
+  - United States vmess 099
   - None vmess 0100
   - None vmess 0101
   - None vmess 11
@@ -8195,8 +8190,8 @@ proxy-groups:
   - None vmess 294
   - None vmess 295
   - None vmess 296
-  - United States vmess 297
-  - United States vmess 298
+  - None vmess 297
+  - None vmess 298
   - None vmess 299
   - None vmess 2100
   - None vmess 2101
@@ -8301,10 +8296,10 @@ proxy-groups:
   - United States vmess 591
   - None vmess 592
   - Canada vmess 593
-  - None vmess 594
-  - None vmess 595
-  - United States vmess 596
-  - United States vmess 597
+  - United States vmess 594
+  - United States vmess 595
+  - None vmess 596
+  - None vmess 597
   - None vmess 598
   - None vmess 599
   - None vmess 5100
@@ -8411,7 +8406,7 @@ proxy-groups:
   - None vmess 796
   - United States vmess 797
   - United States vmess 798
-  - None vmess 799
+  - United States vmess 799
   - None vmess 7100
   - None vmess 7101
   - None vmess 81
@@ -8507,550 +8502,11 @@ proxy-groups:
   - United States vmess 891
   - None vmess 892
   - Canada vmess 893
-  - None vmess 894
+  - United States vmess 894
   - None vmess 895
   - None vmess 896
   - None vmess 897
-  - United States vmess 898
-  - United States vmess 899
-  - None vmess 8100
-  - None vmess 8101
-  - None vmess 91
-  - Canada vmess 92
-  - None vmess 93
-  - None vmess 94
-  - United States hysteria 0
-  - United States hysteria 1
-  - United States hysteria 2
-  - United States hysteria 3
-  - United States hysteria2 0
-  - United States hysteria2 1
-  - United States hysteria2 2
-  - United States hysteria2 3
-- name: 自动选择
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - None vmess 01
-  - None vmess 02
-  - Canada vmess 03
-  - None vmess 04
-  - United States vmess 05
-  - United States vmess 06
-  - None vmess 07
-  - United States vmess 08
-  - United States vmess 09
-  - United States vmess 010
-  - None vmess 011
-  - None vmess 012
-  - None vmess 013
-  - None vmess 014
-  - None vmess 015
-  - None vmess 016
-  - None vmess 017
-  - None vmess 018
-  - None vmess 019
-  - None vmess 020
-  - None vmess 021
-  - None vmess 022
-  - None vmess 023
-  - None vmess 024
-  - None vmess 025
-  - None vmess 026
-  - None vmess 027
-  - None vmess 028
-  - None vmess 029
-  - None vmess 030
-  - None vmess 031
-  - None vmess 032
-  - None vmess 033
-  - None vmess 034
-  - None vmess 035
-  - None vmess 036
-  - None vmess 037
-  - None vmess 038
-  - None vmess 039
-  - None vmess 040
-  - None vmess 041
-  - None vmess 042
-  - None vmess 043
-  - None vmess 044
-  - None vmess 045
-  - None vmess 046
-  - None vmess 047
-  - None vmess 048
-  - None vmess 049
-  - None vmess 050
-  - None vmess 051
-  - None vmess 052
-  - None vmess 053
-  - None vmess 054
-  - None vmess 055
-  - None vmess 056
-  - None vmess 057
-  - None vmess 058
-  - None vmess 059
-  - None vmess 060
-  - None vmess 061
-  - United States vmess 062
-  - United States vmess 063
-  - United States vmess 064
-  - United States vmess 065
-  - United States vmess 066
-  - United States vmess 067
-  - United States vmess 068
-  - United States vmess 069
-  - United States vmess 070
-  - United States vmess 071
-  - United States vmess 072
-  - United States vmess 073
-  - United States vmess 074
-  - United States vmess 075
-  - United States vmess 076
-  - United States vmess 077
-  - United States vmess 078
-  - United States vmess 079
-  - United States vmess 080
-  - United States vmess 081
-  - United States vmess 082
-  - United States vmess 083
-  - United States vmess 084
-  - United States vmess 085
-  - United States vmess 086
-  - United States vmess 087
-  - United States vmess 088
-  - United States vmess 089
-  - United States vmess 090
-  - United States vmess 091
-  - None vmess 092
-  - Canada vmess 093
-  - United States vmess 094
-  - United States vmess 095
-  - None vmess 096
-  - United States vmess 097
-  - None vmess 098
-  - None vmess 099
-  - None vmess 0100
-  - None vmess 0101
-  - None vmess 11
-  - Canada vmess 12
-  - None vmess 13
-  - None vmess 14
-  - None vmess 21
-  - None vmess 22
-  - Canada vmess 23
-  - None vmess 24
-  - United States vmess 25
-  - United States vmess 26
-  - None vmess 27
-  - United States vmess 28
-  - United States vmess 29
-  - United States vmess 210
-  - None vmess 211
-  - None vmess 212
-  - None vmess 213
-  - None vmess 214
-  - None vmess 215
-  - None vmess 216
-  - None vmess 217
-  - None vmess 218
-  - None vmess 219
-  - None vmess 220
-  - None vmess 221
-  - None vmess 222
-  - None vmess 223
-  - None vmess 224
-  - None vmess 225
-  - None vmess 226
-  - None vmess 227
-  - None vmess 228
-  - None vmess 229
-  - None vmess 230
-  - None vmess 231
-  - None vmess 232
-  - None vmess 233
-  - None vmess 234
-  - None vmess 235
-  - None vmess 236
-  - None vmess 237
-  - None vmess 238
-  - None vmess 239
-  - None vmess 240
-  - None vmess 241
-  - None vmess 242
-  - None vmess 243
-  - None vmess 244
-  - None vmess 245
-  - None vmess 246
-  - None vmess 247
-  - None vmess 248
-  - None vmess 249
-  - None vmess 250
-  - None vmess 251
-  - None vmess 252
-  - None vmess 253
-  - None vmess 254
-  - None vmess 255
-  - None vmess 256
-  - None vmess 257
-  - None vmess 258
-  - None vmess 259
-  - None vmess 260
-  - None vmess 261
-  - United States vmess 262
-  - United States vmess 263
-  - United States vmess 264
-  - United States vmess 265
-  - United States vmess 266
-  - United States vmess 267
-  - United States vmess 268
-  - United States vmess 269
-  - United States vmess 270
-  - United States vmess 271
-  - United States vmess 272
-  - United States vmess 273
-  - United States vmess 274
-  - United States vmess 275
-  - United States vmess 276
-  - United States vmess 277
-  - United States vmess 278
-  - United States vmess 279
-  - United States vmess 280
-  - United States vmess 281
-  - United States vmess 282
-  - United States vmess 283
-  - United States vmess 284
-  - United States vmess 285
-  - United States vmess 286
-  - United States vmess 287
-  - United States vmess 288
-  - United States vmess 289
-  - United States vmess 290
-  - United States vmess 291
-  - None vmess 292
-  - Canada vmess 293
-  - None vmess 294
-  - None vmess 295
-  - None vmess 296
-  - United States vmess 297
-  - United States vmess 298
-  - None vmess 299
-  - None vmess 2100
-  - None vmess 2101
-  - None vmess 31
-  - Canada vmess 32
-  - None vmess 33
-  - None vmess 34
-  - None vmess 41
-  - Canada vmess 42
-  - None vmess 43
-  - None vmess 44
-  - None vmess 51
-  - None vmess 52
-  - Canada vmess 53
-  - None vmess 54
-  - United States vmess 55
-  - United States vmess 56
-  - None vmess 57
-  - United States vmess 58
-  - United States vmess 59
-  - United States vmess 510
-  - None vmess 511
-  - None vmess 512
-  - None vmess 513
-  - None vmess 514
-  - None vmess 515
-  - None vmess 516
-  - None vmess 517
-  - None vmess 518
-  - None vmess 519
-  - None vmess 520
-  - None vmess 521
-  - None vmess 522
-  - None vmess 523
-  - None vmess 524
-  - None vmess 525
-  - None vmess 526
-  - None vmess 527
-  - None vmess 528
-  - None vmess 529
-  - None vmess 530
-  - None vmess 531
-  - None vmess 532
-  - None vmess 533
-  - None vmess 534
-  - None vmess 535
-  - None vmess 536
-  - None vmess 537
-  - None vmess 538
-  - None vmess 539
-  - None vmess 540
-  - None vmess 541
-  - None vmess 542
-  - None vmess 543
-  - None vmess 544
-  - None vmess 545
-  - None vmess 546
-  - None vmess 547
-  - None vmess 548
-  - None vmess 549
-  - None vmess 550
-  - None vmess 551
-  - None vmess 552
-  - None vmess 553
-  - None vmess 554
-  - None vmess 555
-  - None vmess 556
-  - None vmess 557
-  - None vmess 558
-  - None vmess 559
-  - None vmess 560
-  - None vmess 561
-  - United States vmess 562
-  - United States vmess 563
-  - United States vmess 564
-  - United States vmess 565
-  - United States vmess 566
-  - United States vmess 567
-  - United States vmess 568
-  - United States vmess 569
-  - United States vmess 570
-  - United States vmess 571
-  - United States vmess 572
-  - United States vmess 573
-  - United States vmess 574
-  - United States vmess 575
-  - United States vmess 576
-  - United States vmess 577
-  - United States vmess 578
-  - United States vmess 579
-  - United States vmess 580
-  - United States vmess 581
-  - United States vmess 582
-  - United States vmess 583
-  - United States vmess 584
-  - United States vmess 585
-  - United States vmess 586
-  - United States vmess 587
-  - United States vmess 588
-  - United States vmess 589
-  - United States vmess 590
-  - United States vmess 591
-  - None vmess 592
-  - Canada vmess 593
-  - None vmess 594
-  - None vmess 595
-  - United States vmess 596
-  - United States vmess 597
-  - None vmess 598
-  - None vmess 599
-  - None vmess 5100
-  - None vmess 5101
-  - None vmess 61
-  - Canada vmess 62
-  - None vmess 63
-  - None vmess 64
-  - None vmess 71
-  - None vmess 72
-  - Canada vmess 73
-  - None vmess 74
-  - United States vmess 75
-  - United States vmess 76
-  - None vmess 77
-  - United States vmess 78
-  - United States vmess 79
-  - United States vmess 710
-  - None vmess 711
-  - None vmess 712
-  - None vmess 713
-  - None vmess 714
-  - None vmess 715
-  - None vmess 716
-  - None vmess 717
-  - None vmess 718
-  - None vmess 719
-  - None vmess 720
-  - None vmess 721
-  - None vmess 722
-  - None vmess 723
-  - None vmess 724
-  - None vmess 725
-  - None vmess 726
-  - None vmess 727
-  - None vmess 728
-  - None vmess 729
-  - None vmess 730
-  - None vmess 731
-  - None vmess 732
-  - None vmess 733
-  - None vmess 734
-  - None vmess 735
-  - None vmess 736
-  - None vmess 737
-  - None vmess 738
-  - None vmess 739
-  - None vmess 740
-  - None vmess 741
-  - None vmess 742
-  - None vmess 743
-  - None vmess 744
-  - None vmess 745
-  - None vmess 746
-  - None vmess 747
-  - None vmess 748
-  - None vmess 749
-  - None vmess 750
-  - None vmess 751
-  - None vmess 752
-  - None vmess 753
-  - None vmess 754
-  - None vmess 755
-  - None vmess 756
-  - None vmess 757
-  - None vmess 758
-  - None vmess 759
-  - None vmess 760
-  - None vmess 761
-  - United States vmess 762
-  - United States vmess 763
-  - United States vmess 764
-  - United States vmess 765
-  - United States vmess 766
-  - United States vmess 767
-  - United States vmess 768
-  - United States vmess 769
-  - United States vmess 770
-  - United States vmess 771
-  - United States vmess 772
-  - United States vmess 773
-  - United States vmess 774
-  - United States vmess 775
-  - United States vmess 776
-  - United States vmess 777
-  - United States vmess 778
-  - United States vmess 779
-  - United States vmess 780
-  - United States vmess 781
-  - United States vmess 782
-  - United States vmess 783
-  - United States vmess 784
-  - United States vmess 785
-  - United States vmess 786
-  - United States vmess 787
-  - United States vmess 788
-  - United States vmess 789
-  - United States vmess 790
-  - United States vmess 791
-  - None vmess 792
-  - Canada vmess 793
-  - None vmess 794
-  - None vmess 795
-  - None vmess 796
-  - United States vmess 797
-  - United States vmess 798
-  - None vmess 799
-  - None vmess 7100
-  - None vmess 7101
-  - None vmess 81
-  - None vmess 82
-  - Canada vmess 83
-  - None vmess 84
-  - United States vmess 85
-  - United States vmess 86
-  - None vmess 87
-  - United States vmess 88
-  - United States vmess 89
-  - United States vmess 810
-  - None vmess 811
-  - None vmess 812
-  - None vmess 813
-  - None vmess 814
-  - None vmess 815
-  - None vmess 816
-  - None vmess 817
-  - None vmess 818
-  - None vmess 819
-  - None vmess 820
-  - None vmess 821
-  - None vmess 822
-  - None vmess 823
-  - None vmess 824
-  - None vmess 825
-  - None vmess 826
-  - None vmess 827
-  - None vmess 828
-  - None vmess 829
-  - None vmess 830
-  - None vmess 831
-  - None vmess 832
-  - None vmess 833
-  - None vmess 834
-  - None vmess 835
-  - None vmess 836
-  - None vmess 837
-  - None vmess 838
-  - None vmess 839
-  - None vmess 840
-  - None vmess 841
-  - None vmess 842
-  - None vmess 843
-  - None vmess 844
-  - None vmess 845
-  - None vmess 846
-  - None vmess 847
-  - None vmess 848
-  - None vmess 849
-  - None vmess 850
-  - None vmess 851
-  - None vmess 852
-  - None vmess 853
-  - None vmess 854
-  - None vmess 855
-  - None vmess 856
-  - None vmess 857
-  - None vmess 858
-  - None vmess 859
-  - None vmess 860
-  - None vmess 861
-  - United States vmess 862
-  - United States vmess 863
-  - United States vmess 864
-  - United States vmess 865
-  - United States vmess 866
-  - United States vmess 867
-  - United States vmess 868
-  - United States vmess 869
-  - United States vmess 870
-  - United States vmess 871
-  - United States vmess 872
-  - United States vmess 873
-  - United States vmess 874
-  - United States vmess 875
-  - United States vmess 876
-  - United States vmess 877
-  - United States vmess 878
-  - United States vmess 879
-  - United States vmess 880
-  - United States vmess 881
-  - United States vmess 882
-  - United States vmess 883
-  - United States vmess 884
-  - United States vmess 885
-  - United States vmess 886
-  - United States vmess 887
-  - United States vmess 888
-  - United States vmess 889
-  - United States vmess 890
-  - United States vmess 891
-  - None vmess 892
-  - Canada vmess 893
-  - None vmess 894
-  - None vmess 895
-  - None vmess 896
-  - None vmess 897
-  - United States vmess 898
+  - None vmess 898
   - United States vmess 899
   - None vmess 8100
   - None vmess 8101
