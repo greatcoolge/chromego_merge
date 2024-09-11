@@ -175,28 +175,24 @@ def process_hysteria2(data, index):
 def process_xray(data, index):
     try:
         json_data = json.loads(data)
-        # 处理 xray 数据
         protocol = json_data["outbounds"][0]["protocol"]
-        #vless操作
+        proxy = None  # 初始化 proxy 为 None
+
         if protocol == "vless":
-        # 提取所需字段
             server = json_data["outbounds"][0]["settings"]["vnext"][0]["address"]
             port = json_data["outbounds"][0]["settings"]["vnext"][0]["port"]
             uuid = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["id"]
             istls = True
             flow = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["flow"]
-            # 传输方式
             network = json_data["outbounds"][0]["streamSettings"]["network"]
             publicKey = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["publicKey"]
             shortId = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["shortId"]
             serverName = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["serverName"]
             fingerprint = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["fingerprint"]
-            # udp转发
             isudp = True
             location = get_physical_location(server)
             name = f"{location} vless {index}"
             
-            # 根据network判断tcp
             if network == "tcp":
                 proxy = {
                     "name": name,
@@ -209,17 +205,15 @@ def process_xray(data, index):
                     "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
-                    "servername": serverName,                
-                    "reality-opts":{
+                    "servername": serverName,
+                    "reality-opts": {
                         "public-key": publicKey,
-                        "short-id": shortId}
+                        "short-id": shortId
+                    }
                 }
                 
-            # 根据network判断grpc
             elif network == "grpc":
                 serviceName = json_data["outbounds"][0]["streamSettings"]["grpcSettings"]["serviceName"]
-                
-                # 创建当前网址的proxy字典
                 proxy = {
                     "name": name,
                     "type": protocol,
@@ -232,16 +226,20 @@ def process_xray(data, index):
                     "flow": flow,
                     "client-fingerprint": fingerprint,
                     "servername": serverName,
-                    "grpc-opts":{
+                    "grpc-opts": {
                         "grpc-service-name": serviceName
                     },
-                    "reality-opts":{
+                    "reality-opts": {
                         "public-key": publicKey,
-                        "short-id": shortId}
+                        "short-id": shortId
+                    }
                 }
 
-        # 将当前proxy字典添加到所有proxies列表中
-        merged_proxies.append(proxy)
+        if proxy:
+            merged_proxies.append(proxy)
+        else:
+            logging.warning(f"No proxy configuration found for index {index}")
+
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
 
