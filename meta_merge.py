@@ -173,19 +173,19 @@ def process_hysteria2(data, index):
 
 #处理xray
 def process_xray(data, index):
+    proxy = None  # 确保proxy变量在所有情况下都有定义
     try:
         json_data = json.loads(data)
-        # 打印调试信息
         logging.debug(f"Processing data for index {index}: {json_data}")
-        
+
         protocol = json_data.get("outbounds", [{}])[0].get("protocol", "")
         logging.debug(f"Protocol found: {protocol}")
-        
+
         if protocol == "vless":
             settings = json_data["outbounds"][0].get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
             streamSettings = json_data["outbounds"][0].get("streamSettings", {})
-            
+
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
@@ -200,7 +200,7 @@ def process_xray(data, index):
             isudp = True
             location = get_physical_location(server)
             name = f"{location} vless {index}"
-            
+
             if network == "tcp":
                 proxy = {
                     "name": name,
@@ -219,7 +219,7 @@ def process_xray(data, index):
                         "short-id": shortId
                     }
                 }
-                
+
             elif network == "grpc":
                 grpcSettings = streamSettings.get("grpcSettings", {})
                 serviceName = grpcSettings.get("serviceName", "")
