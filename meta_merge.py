@@ -175,20 +175,28 @@ def process_hysteria2(data, index):
 def process_xray(data, index):
     try:
         json_data = json.loads(data)
-        protocol = json_data["outbounds"][0]["protocol"]
-        proxy = None  # 初始化 proxy 为 None
-
+        # 打印调试信息
+        logging.debug(f"Processing data for index {index}: {json_data}")
+        
+        protocol = json_data.get("outbounds", [{}])[0].get("protocol", "")
+        logging.debug(f"Protocol found: {protocol}")
+        
         if protocol == "vless":
-            server = json_data["outbounds"][0]["settings"]["vnext"][0]["address"]
-            port = json_data["outbounds"][0]["settings"]["vnext"][0]["port"]
-            uuid = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["id"]
+            settings = json_data["outbounds"][0].get("settings", {})
+            vnext = settings.get("vnext", [{}])[0]
+            streamSettings = json_data["outbounds"][0].get("streamSettings", {})
+            
+            server = vnext.get("address", "")
+            port = vnext.get("port", "")
+            uuid = vnext.get("users", [{}])[0].get("id", "")
             istls = True
-            flow = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["flow"]
-            network = json_data["outbounds"][0]["streamSettings"]["network"]
-            publicKey = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["publicKey"]
-            shortId = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["shortId"]
-            serverName = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["serverName"]
-            fingerprint = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["fingerprint"]
+            flow = vnext.get("users", [{}])[0].get("flow", "")
+            network = streamSettings.get("network", "")
+            realitySettings = streamSettings.get("realitySettings", {})
+            publicKey = realitySettings.get("publicKey", "")
+            shortId = realitySettings.get("shortId", "")
+            serverName = realitySettings.get("serverName", "")
+            fingerprint = realitySettings.get("fingerprint", "")
             isudp = True
             location = get_physical_location(server)
             name = f"{location} vless {index}"
@@ -213,7 +221,8 @@ def process_xray(data, index):
                 }
                 
             elif network == "grpc":
-                serviceName = json_data["outbounds"][0]["streamSettings"]["grpcSettings"]["serviceName"]
+                grpcSettings = streamSettings.get("grpcSettings", {})
+                serviceName = grpcSettings.get("serviceName", "")
                 proxy = {
                     "name": name,
                     "type": protocol,
