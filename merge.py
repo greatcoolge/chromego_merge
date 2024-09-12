@@ -51,8 +51,9 @@ def process_clash(data, index):
         proxies = content.get('proxies', [])
         
         for proxy in proxies:
-            # Initialize `insecure` with a default value
+            # Initialize `insecure` and `fp` with default values
             insecure = 0
+            fp = ""  # Add this line to ensure `fp` is always defined
 
             if proxy['type'] == 'vless':
                 server = proxy.get("server", "")
@@ -66,7 +67,7 @@ def process_clash(data, index):
                 flow = proxy.get("flow", "")
                 publicKey = proxy.get('reality-opts', {}).get('public-key', '')
                 short_id = proxy.get('reality-opts', {}).get('short-id', '')
-                fp = proxy.get("client-fingerprint", "")
+                fp = proxy.get("client-fingerprint", "")  # Ensure `fp` is set if available
                 insecure = int(proxy.get("skip-cert-verify", 0))  # Use `get` with default value
                 grpc_serviceName = proxy.get('grpc-opts', {}).get('grpc-service-name', '')
 
@@ -178,19 +179,7 @@ def process_clash(data, index):
                 merged_proxies.append(ss_meta)
     except Exception as e:
         logging.error(f"Error processing clash data for index {index}: {e}")
-        
-def process_naive(data, index):
-    try:
-        json_data = json.loads(data)
 
-        proxy_str = json_data["proxy"]
-        #proxy_str = proxy_str.replace("https://", "")
-        naiveproxy = base64.b64encode(proxy_str.encode()).decode()
-        merged_proxies.append(naiveproxy)
-
-
-    except Exception as e:
-        logging.error(f"Error processing naive data for index {index}: {e}")
 #处理sing-box节点，待办
 def process_sb(data, index):
     try:
