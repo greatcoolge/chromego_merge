@@ -252,6 +252,54 @@ def process_xray(data, index):
                 }
                 logging.debug(f"GRPC Proxy: {proxy}")
 
+        elif protocol == "vmess":
+            settings = first_outbound.get("settings", {})
+            vnext = settings.get("vnext", [{}])[0]
+            streamSettings = first_outbound.get("streamSettings", {})
+
+            server = vnext.get("address", "")
+            port = vnext.get("port", "")
+            uuid = vnext.get("users", [{}])[0].get("id", "")
+            istls = True
+            alterId = vnext.get("users", [{}])[0].get("alterId", 0)
+            network = streamSettings.get("network", "")
+            security = streamSettings.get("security", "none")
+            location = get_physical_location(server)
+            name = f"{location} vmess {index}"
+
+            if network == "tcp":
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "network": network,
+                    "tls": istls,
+                    "alter-id": alterId,
+                    "security": security
+                }
+                logging.debug(f"TCP Proxy: {proxy}")
+
+            elif network == "ws":
+                wsSettings = streamSettings.get("wsSettings", {})
+                path = wsSettings.get("path", "")
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "network": network,
+                    "tls": istls,
+                    "alter-id": alterId,
+                    "security": security,
+                    "ws-opts": {
+                        "path": path
+                    }
+                }
+                logging.debug(f"WS Proxy: {proxy}")
+
         else:
             logging.warning(f"Unsupported protocol: {protocol}")
 
