@@ -20,26 +20,30 @@ def process_urls(url_file, processor):
                 data = response.read().decode('utf-8')
                 processor(data, index)
             except Exception as e:
-                logging.error(f"Error processing URL {url}: {e}")
+                logging.error(f"处理 URL {url} 时出错: {e}")
     except Exception as e:
-        logging.error(f"Error reading file {url_file}: {e}")
-def get_physical_location(address):
-    address = re.sub(':.*', '', address)  # 用正则表达式去除端口部分
+        logging.error(f"读取文件 {url_file} 时出错: {e}")
+
+def get_physical_location(address, db_path='GeoLite2-City.mmdb'):
+    address = re.sub(r':.*', '', address)  # 用正则表达式去除端口部分
     try:
         ip_address = socket.gethostbyname(address)
     except socket.gaierror:
         ip_address = address
 
     try:
-        reader = geoip2.database.Reader('GeoLite2-City.mmdb')  # 这里的路径需要指向你自己的数据库文件
-        response = reader.city(ip_address)
-        country = response.country.name
-        city = response.city.name
-        #return f"{country}_{city}"
-        return f"{country}"
-    except geoip2.errors.AddressNotFoundError as e:
-        print(f"Error: {e}")
-        return "Unknown"
+        with geoip2.database.Reader(db_path) as reader:
+            response = reader.city(ip_address)
+            country = response.country.name
+            city = response.city.name
+            return f"{country}_{city}"
+    except geoip2.errors.AddressNotFoundError:
+        logging.warning(f"IP 地址 {ip_address} 不在 GeoIP 数据库中")
+        return "未知"
+    except Exception as e:
+        logging.error(f"获取物理位置时出错: {e}")
+        return "未知"
+
 #提取clash节点
 def process_clash(data, index):
     global merged_proxies  # Ensure merged_proxies is accessible within the function
