@@ -178,22 +178,20 @@ def process_xray(data, index):
         json_data = json.loads(data)
         logging.debug(f"Processing data for index {index}: {json_data}")
 
-        protocol = json_data.get("outbounds", [{}])[0].get("protocol", "")
+        outbounds = json_data.get("outbounds", [])
+        if not outbounds:
+            logging.warning(f"No 'outbounds' found for index {index}")
+            return
+
+        first_outbound = outbounds[0]
+        protocol = first_outbound.get("protocol", "")
         logging.debug(f"Protocol found: {protocol}")
 
         if protocol == "vless":
-            settings = json_data["outbounds"][0].get("settings", {})
+            settings = first_outbound.get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
-            streamSettings = json_data["outbounds"][0].get("streamSettings", {})
-            # 其他处理代码...
-            logging.debug(f"Vless settings: {settings}")
-            logging.debug(f"Stream settings: {streamSettings}")
+            streamSettings = first_outbound.get("streamSettings", {})
 
-            # 创建代理字典代码...
-        else:
-            logging.warning(f"Unsupported protocol: {protocol}")
-
-        
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
@@ -227,6 +225,7 @@ def process_xray(data, index):
                         "short-id": shortId
                     }
                 }
+                logging.debug(f"TCP Proxy: {proxy}")
 
             elif network == "grpc":
                 grpcSettings = streamSettings.get("grpcSettings", {})
@@ -251,6 +250,10 @@ def process_xray(data, index):
                         "short-id": shortId
                     }
                 }
+                logging.debug(f"GRPC Proxy: {proxy}")
+
+        else:
+            logging.warning(f"Unsupported protocol: {protocol}")
 
         if proxy:
             merged_proxies.append(proxy)
