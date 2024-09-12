@@ -173,7 +173,7 @@ def process_hysteria2(data, index):
 
 #处理xray
 def process_xray(data, index):
-    proxy = None  # 确保proxy变量在所有情况下都有定义
+    proxy = None
     try:
         json_data = json.loads(data)
         logging.debug(f"Processing data for index {index}: {json_data}")
@@ -185,7 +185,15 @@ def process_xray(data, index):
             settings = json_data["outbounds"][0].get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
             streamSettings = json_data["outbounds"][0].get("streamSettings", {})
+            # 其他处理代码...
+            logging.debug(f"Vless settings: {settings}")
+            logging.debug(f"Stream settings: {streamSettings}")
 
+            # 创建代理字典代码...
+        else:
+            logging.warning(f"Unsupported protocol: {protocol}")
+
+        
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
