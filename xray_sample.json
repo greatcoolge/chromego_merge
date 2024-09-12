@@ -1,0 +1,30 @@
+{
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "example.com",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "uuid",
+                                "flow": "some-flow"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "publicKey": "public-key",
+                    "shortId": "short-id",
+                    "serverName": "server-name",
+                    "fingerprint": "fingerprint"
+                }
+            }
+        }
+    ]
+}
