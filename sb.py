@@ -5,14 +5,21 @@ import os
 # 配置 URL
 config_url = "https://raw.githubusercontent.com/yaney01/chromego_merge/main/sub/shadowrocket_base64.txt"
 
-# Sing-Box 配置服务 URL
-base_url = "https://singbox.nyc.mn/singbox"
-
-# 对配置 URL 进行 URL 编码
+# URL 编码配置 URL
 encoded_config_url = urllib.parse.quote(config_url)
 
+# 可选参数（如果有的话）
+selected_rules = ""  # 这里可以填写预定义规则集名称，如 'balanced'，如果不需要可以保持为空
+custom_rules = ""    # 这里可以填写自定义规则的 JSON 数组，如果不需要可以保持为空
+
 # 构建请求 URL
+base_url = "https://singbox.nyc.mn/singbox"
 request_url = f"{base_url}?config={encoded_config_url}"
+
+if selected_rules:
+    request_url += f"&selectedRules={urllib.parse.quote(selected_rules)}"
+if custom_rules:
+    request_url += f"&customRules={urllib.parse.quote(custom_rules)}"
 
 # 发送 HTTP GET 请求
 try:
