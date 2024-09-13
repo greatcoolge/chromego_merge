@@ -5,7 +5,7 @@ import os
 original_url = "https://raw.githubusercontent.com/yaney01/chromego_merge/main/sub/shadowrocket_base64.txt"
 
 # 转换服务链接
-conversion_url = "https://singbox.nyc.mn/convert"
+conversion_url = "https://singbox.nyc.mn/config"
 
 # 发送 HTTP 请求获取原始数据
 response = requests.get(original_url)
