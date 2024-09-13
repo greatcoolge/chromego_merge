@@ -317,43 +317,33 @@ def get_physical_location(server):
     return "Location"
 
 # 确保 merged_proxies 是一个全局变量
-merged_proxies = []
+# ... existing code ...
 
-def update_warp_proxy_groups(config_warp_data, merged_proxies):
-    for group in config_warp_data['proxy-groups']:
+def update_proxy_groups(config_data, merged_proxies):
+    for group in config_data.get('proxy-groups', []):
         if group['name'] in ['自动选择', '手动选择', '负载均衡']:
             if 'proxies' not in group or not group['proxies']:
                 group['proxies'] = [proxy['name'] for proxy in merged_proxies]
             else:
                 group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
-# 包含hysteria2
+# Ensure merged_proxies is a global variable
 merged_proxies = []
 
-# 处理 clash URLs
+# Process the URLs
 process_urls('./urls/clash_urls.txt', process_clash)
-
-# 处理 shadowtls URLs
-#process_urls('./urls/sb_urls.txt', process_sb)
-
-# 处理 hysteria URLs
 process_urls('./urls/hysteria_urls.txt', process_hysteria)
-
-# 处理 hysteria2 URLs
 process_urls('./urls/hysteria2_urls.txt', process_hysteria2)
-
-# 处理 xray URLs
 process_urls('./urls/xray_urls.txt', process_xray)
 
-# 读取普通的配置文件内容
+# Load the templates
 with open('./templates/clash_template.yaml', 'r', encoding='utf-8') as file:
     config_data = yaml.safe_load(file)
 
-# 读取warp配置文件内容
 with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file:
     config_warp_data = yaml.safe_load(file)
 
-# 添加合并后的代理到proxies部分
+# Add merged proxies
 if 'proxies' not in config_data or not config_data['proxies']:
     config_data['proxies'] = merged_proxies
 else:
@@ -364,12 +354,11 @@ if 'proxies' not in config_warp_data or not config_warp_data['proxies']:
 else:
     config_warp_data['proxies'].extend(merged_proxies)
 
-
-# 更新自动选择和节点选择的proxies的name部分
+# Update proxy groups
 update_proxy_groups(config_data, merged_proxies)
 update_warp_proxy_groups(config_warp_data, merged_proxies)
 
-# 将更新后的数据写入到一个YAML文件中，并指定编码格式为UTF-8
+# Write the results to YAML files
 with open('./sub/merged_proxies_new.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config_data, file, sort_keys=False, allow_unicode=True)
 
@@ -377,4 +366,3 @@ with open('./sub/merged_warp_proxies_new.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config_warp_data, file, sort_keys=False, allow_unicode=True)
 
 print("聚合完成")
-
