@@ -215,7 +215,6 @@ def process_sb(data, index):
 def process_hysteria(data, index):
     try:
         json_data = json.loads(data)
-        # 处理 hysteria 数据
         # 提取字段值
         server = json_data.get("server", "")
         protocol = json_data.get("protocol", "")
@@ -233,27 +232,26 @@ def process_hysteria(data, index):
         hysteria = f"hysteria://{server}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#{name}"
         merged_proxies.append(hysteria)
 
-
     except Exception as e:
         logging.error(f"Error processing hysteria data for index {index}: {e}")
-# 处理hysteria2
+
 def process_hysteria2(data, index):
     try:
         json_data = json.loads(data)
-        # 处理 hysteria2 数据
         # 提取字段值
-        server = json_data["server"]
-        insecure = int(json_data["tls"]["insecure"])
-        sni = json_data["tls"]["sni"]
-        auth = json_data["auth"]
+        server = json_data.get("server", "")
+        tls = json_data.get("tls", {})
+        insecure = int(tls.get("insecure", 0))
+        sni = tls.get("sni", "")
+        auth = json_data.get("auth", "")
         # 生成URL
         location = get_physical_location(server)
         name = f"{location} hysteria2 {index}"
         hysteria2 = f"hysteria2://{auth}@{server}?insecure={insecure}&sni={sni}#{name}"
-
         merged_proxies.append(hysteria2)
     except Exception as e:
         logging.error(f"Error processing hysteria2 data for index {index}: {e}")
+
 
 #处理xray
 def process_xray(data, index):
@@ -263,12 +261,12 @@ def process_xray(data, index):
         protocol = json_data["outbounds"][0].get("protocol")
 
         if protocol == "vless":
-            vnext = json_data["outbounds"][0]["settings"]["vnext"]
+            vnext = json_data["outbounds"][0]["settings"].get("vnext", [])
 
             if vnext:
                 server = vnext[0].get("address", "")
                 port = vnext[0].get("port", "")
-                users = vnext[0]["users"]
+                users = vnext[0].get("users", [])
 
                 if users:
                     user = users[0]
@@ -283,10 +281,11 @@ def process_xray(data, index):
             publicKey = reality_settings.get("publicKey", "")
             short_id = reality_settings.get("shortId", "")
             sni = reality_settings.get("serverName", "")
-            #tls
+
+            # 处理 tlsSettings
             tls_settings = stream_settings.get("tlsSettings", {})
             sni = tls_settings.get("serverName", sni)
-            insecure = int(tls_settings.get("allowInsecure", 0))
+            insecure = int(tls_settings.get("allowInsecure", 0))  # 确保有默认值
 
             fp = reality_settings.get("fingerprint", "")
             fp = tls_settings.get("fingerprint", fp)
@@ -298,6 +297,7 @@ def process_xray(data, index):
             ws_settings = stream_settings.get("wsSettings", {})
             ws_path = ws_settings.get("path", "")
             ws_headers_host = ws_settings.get("headers", {}).get("Host", "")
+
             location = get_physical_location(server)
             name = f"{location} vless {index}"
             xray_proxy = f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}#{name}"
