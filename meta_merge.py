@@ -260,7 +260,6 @@ def process_xray(data, index):
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
-            istls = True
             alterId = vnext.get("users", [{}])[0].get("alterId", 0)
             network = streamSettings.get("network", "")
             security = streamSettings.get("security", "none")
@@ -274,28 +273,32 @@ def process_xray(data, index):
                     "server": server,
                     "port": port,
                     "uuid": uuid,
+                    "alterId": alterId,
+                    "cipher": "auto",
                     "network": network,
-                    "tls": istls,
-                    "alter-id": alterId,
-                    "security": security
+                    "tls": security == "tls",
+                    "udp": True
                 }
                 logging.debug(f"TCP Proxy: {proxy}")
 
             elif network == "ws":
                 wsSettings = streamSettings.get("wsSettings", {})
                 path = wsSettings.get("path", "")
+                headers = wsSettings.get("headers", {})
                 proxy = {
                     "name": name,
                     "type": protocol,
                     "server": server,
                     "port": port,
                     "uuid": uuid,
+                    "alterId": alterId,
+                    "cipher": "auto",
                     "network": network,
-                    "tls": istls,
-                    "alter-id": alterId,
-                    "security": security,
+                    "tls": security == "tls",
+                    "servername": streamSettings.get("serverName", ""),
                     "ws-opts": {
-                        "path": path
+                        "path": path,
+                        "headers": headers
                     }
                 }
                 logging.debug(f"WS Proxy: {proxy}")
