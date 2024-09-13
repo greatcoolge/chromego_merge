@@ -187,8 +187,6 @@ def process_xray(data, index):
         protocol = first_outbound.get("protocol", "")
         logging.debug(f"Protocol found: {protocol}")
 
-
-
         if protocol == "vless":
             settings = first_outbound.get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
@@ -197,7 +195,6 @@ def process_xray(data, index):
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
-            istls = True
             flow = vnext.get("users", [{}])[0].get("flow", "")
             network = streamSettings.get("network", "")
             realitySettings = streamSettings.get("realitySettings", {})
@@ -217,7 +214,7 @@ def process_xray(data, index):
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": istls,
+                    "tls": True,
                     "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
@@ -239,7 +236,7 @@ def process_xray(data, index):
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": istls,
+                    "tls": True,
                     "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
@@ -254,7 +251,7 @@ def process_xray(data, index):
                 }
                 logging.debug(f"GRPC Proxy: {proxy}")
 
-        if protocol == "vmess":
+        elif protocol == "vmess":
             settings = first_outbound.get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
             streamSettings = first_outbound.get("streamSettings", {})
@@ -268,10 +265,12 @@ def process_xray(data, index):
             location = get_physical_location(server)
             name = f"{location} vmess {index}"
 
-            # 确保 alterId 存在
+            # 记录 alterId 是否存在
             if alterId is None:
                 logging.error(f"Missing 'alterId' for vmess protocol at index {index}")
                 return
+            else:
+                logging.debug(f"'alterId' found: {alterId}")
 
             if network == "tcp":
                 proxy = {
@@ -315,7 +314,7 @@ def process_xray(data, index):
             logging.warning(f"No proxy configuration found for index {index}")
 
     except Exception as e:
-        logging.error(f"Error processing xray data for index {index}: 
+        logging.error(f"Error processing xray data for index {index}: {e}") 
 
 
 def update_proxy_groups(config_data, merged_proxies):
