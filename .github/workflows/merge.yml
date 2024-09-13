@@ -30,6 +30,9 @@ jobs:
       - name: Run sb script
         run: python sb.py
 
+      - name: Run merged proxies script
+        run: python merged_proxies.py  # 新添加的步骤
+
       - name: Commit Changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
@@ -42,4 +45,3 @@ jobs:
             git push
           else
             echo "No changes detected in the repository."
-          fi
