@@ -187,7 +187,7 @@ def process_xray(data, index):
         protocol = first_outbound.get("protocol", "")
         logging.debug(f"Protocol found: {protocol}")
 
-        if protocol == "vmess":
+        if protocol == "vless":
             settings = first_outbound.get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
             streamSettings = first_outbound.get("streamSettings", {})
@@ -195,18 +195,17 @@ def process_xray(data, index):
             server = vnext.get("address", "")
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
-            alterId = vnext.get("users", [{}])[0].get("alterId", None)  # 默认值为 None
+            istls = True
+            flow = vnext.get("users", [{}])[0].get("flow", "")
             network = streamSettings.get("network", "")
-            security = streamSettings.get("security", "none")
+            realitySettings = streamSettings.get("realitySettings", {})
+            publicKey = realitySettings.get("publicKey", "")
+            shortId = realitySettings.get("shortId", "")
+            serverName = realitySettings.get("serverName", "")
+            fingerprint = realitySettings.get("fingerprint", "")
+            isudp = True
             location = get_physical_location(server)
-            name = f"{location} vmess {index}"
-
-            # 记录 alterId 是否存在
-            if alterId is None:
-                logging.error(f"Missing 'alterId' for vmess protocol at index {index}")
-                return
-            else:
-                logging.debug(f"'alterId' found: {alterId}")
+            name = f"{location} vless {index}"
 
             if network == "tcp":
                 proxy = {
@@ -216,7 +215,67 @@ def process_xray(data, index):
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": True,
+                    "tls": istls,
+                    "udp": isudp,
+                    "flow": flow,
+                    "client-fingerprint": fingerprint,
+                    "servername": serverName,
+                    "reality-opts": {
+                        "public-key": publicKey,
+                        "short-id": shortId
+                    }
+                }
+                logging.debug(f"TCP Proxy: {proxy}")
+
+            elif network == "grpc":
+                grpcSettings = streamSettings.get("grpcSettings", {})
+                serviceName = grpcSettings.get("serviceName", "")
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "network": network,
+                    "tls": istls,
+                    "udp": isudp,
+                    "flow": flow,
+                    "client-fingerprint": fingerprint,
+                    "servername": serverName,
+                    "grpc-opts": {
+                        "grpc-service-name": serviceName
+                    },
+                    "reality-opts": {
+                        "public-key": publicKey,
+                        "short-id": shortId
+                    }
+                }
+                logging.debug(f"GRPC Proxy: {proxy}")
+
+        elif protocol == "vmess":
+            settings = first_outbound.get("settings", {})
+            vnext = settings.get("vnext", [{}])[0]
+            streamSettings = first_outbound.get("streamSettings", {})
+
+            server = vnext.get("address", "")
+            port = vnext.get("port", "")
+            uuid = vnext.get("users", [{}])[0].get("id", "")
+            istls = True
+            alterId = vnext.get("users", [{}])[0].get("alterId", 0)
+            network = streamSettings.get("network", "")
+            security = streamSettings.get("security", "none")
+            location = get_physical_location(server)
+            name = f"{location} vmess {index}"
+
+            if network == "tcp":
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "network": network,
+                    "tls": istls,
                     "alter-id": alterId,
                     "security": security
                 }
@@ -232,7 +291,7 @@ def process_xray(data, index):
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": True,
+                    "tls": istls,
                     "alter-id": alterId,
                     "security": security,
                     "ws-opts": {
@@ -251,16 +310,14 @@ def process_xray(data, index):
 
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
- 
 
+# 添加获取物理位置函数
+def get_physical_location(server):
+    # 假设这是一个占位符函数，你需要用实际的实现替换它
+    return "Location"
 
-def update_proxy_groups(config_data, merged_proxies):
-    for group in config_data['proxy-groups']:
-        if group['name'] in ['自动选择', '节点选择']:
-            if 'proxies' not in group or not group['proxies']:
-                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
-            else:
-                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
+# 确保 merged_proxies 是一个全局变量
+merged_proxies = []
 
 def update_warp_proxy_groups(config_warp_data, merged_proxies):
     for group in config_warp_data['proxy-groups']:
