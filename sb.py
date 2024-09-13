@@ -4,7 +4,7 @@ import os
 # 原始 URL
 base_url = "https://raw.githubusercontent.com/yaney01/chromego_merge/main/sub/shadowrocket_base64.txt"
 # 订阅转换服务链接
-conversion_url = "https://singbox.yaney.eu.org/config"
+conversion_url = "https://singbox.yaney.eu.org/convert?format=json"
 
 # 拼接 URL
 url = f"{base_url}?conversion_url={requests.utils.quote(conversion_url)}"
