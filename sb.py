@@ -1,7 +1,13 @@
 import requests
 import os
 
-url = "https://singbox.yaney.eu.org/config/https:/raw.githubusercontent.com/yaney01/chromego_merge/main/sub/shadowrocket_base64.txt"
+# 原始 URL
+base_url = "https://raw.githubusercontent.com/yaney01/chromego_merge/main/sub/shadowrocket_base64.txt"
+# 订阅转换服务链接
+conversion_url = "https://singbox.yaney.eu.org/config"
+
+# 拼接 URL
+url = f"{base_url}?conversion_url={requests.utils.quote(conversion_url)}"
 output_folder = "sub"
 output_filename = "sb.json"
 
@@ -10,7 +16,6 @@ response = requests.get(url)
 
 # 检查请求是否成功
 if response.status_code == 200:
-    # 创建输出
     # 确保输出文件夹存在
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
