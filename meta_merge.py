@@ -261,7 +261,7 @@ def process_xray(data, index):
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
             istls = True
-            alterId = vnext.get("users", [{}])[0].get("alterId", 0)
+            alterId = vnext.get("users", [{}])[0].get("alterId", 0)  # 加入 alterId 字段
             network = streamSettings.get("network", "")
             security = streamSettings.get("security", "none")
             location = get_physical_location(server)
@@ -276,7 +276,7 @@ def process_xray(data, index):
                     "uuid": uuid,
                     "network": network,
                     "tls": istls,
-                    "alter-id": alterId,
+                    "alter-id": alterId,  # 加入 alterId 字段
                     "security": security
                 }
                 logging.debug(f"TCP Proxy: {proxy}")
@@ -292,7 +292,7 @@ def process_xray(data, index):
                     "uuid": uuid,
                     "network": network,
                     "tls": istls,
-                    "alter-id": alterId,
+                    "alter-id": alterId,  # 加入 alterId 字段
                     "security": security,
                     "ws-opts": {
                         "path": path
@@ -310,6 +310,7 @@ def process_xray(data, index):
 
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
+
 
 def update_proxy_groups(config_data, merged_proxies):
     for group in config_data['proxy-groups']:
