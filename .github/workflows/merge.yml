@@ -1,12 +1,10 @@
 name: Merge Script
 
 on:
-  # push:
-  #   branches:
-  #     - main  # 替换为你的默认分支
   schedule:
-    - cron: '0 0,6,12,18, * * *'  # 每6h一次
+    - cron: '0 0,6,12,18 * * *'  # 每6小时一次
   workflow_dispatch:  # 触发手动事件
+
 jobs:
   merge:
     runs-on: ubuntu-latest
@@ -24,12 +22,14 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run merge script
-        run: python meta_merge.py 
+        run: python meta_merge.py
 
       - name: Run shadowrocket merge script
-        run: python merge.py  
+        run: python merge.py
+
       - name: Run sb script
-        run: python sb.py  
+        run: python sb.py
+
       - name: Commit Changes
         run: |
           if [[ -n "$(git status --porcelain)" ]]; then
