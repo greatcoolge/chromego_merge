@@ -320,13 +320,20 @@ def get_physical_location(server):
 # ... existing code ...
 
 def update_proxy_groups(config_data, merged_proxies):
-    for group in config_data.get('proxy-groups', []):
-        if group['name'] in ['自动选择', '手动选择', '负载均衡']:
+    for group in config_data['proxy-groups']:
+        if group['name'] in ['自动选择', '节点选择']:
             if 'proxies' not in group or not group['proxies']:
                 group['proxies'] = [proxy['name'] for proxy in merged_proxies]
             else:
                 group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
+def update_warp_proxy_groups(config_warp_data, merged_proxies):
+    for group in config_warp_data['proxy-groups']:
+        if group['name'] in ['自动选择', '手动选择', '负载均衡']:
+            if 'proxies' not in group or not group['proxies']:
+                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
+            else:
+                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 # Ensure merged_proxies is a global variable
 merged_proxies = []
 
