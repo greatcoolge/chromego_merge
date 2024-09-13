@@ -261,7 +261,7 @@ def process_xray(data, index):
             port = vnext.get("port", "")
             uuid = vnext.get("users", [{}])[0].get("id", "")
             istls = True
-            alterId = vnext.get("users", [{}])[0].get("alterId")  # 改为 get() 方法，这样如果 alterId 不存在会返回 None
+            alterId = vnext.get("users", [{}])[0].get("alterId", 0)  # 默认值设置为 0
             network = streamSettings.get("network", "")
             security = streamSettings.get("security", "none")
             location = get_physical_location(server)
