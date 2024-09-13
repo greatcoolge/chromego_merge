@@ -7988,45 +7988,57 @@ proxies:
   server: 104.21.238.65
   port: 2082
   uuid: 86e926b9-d67a-4c8f-a35e-024631838a45
+  alterId: 0
+  cipher: auto
   network: ws
-  tls: true
-  alter-id: 0
-  security: none
+  tls: false
+  servername: ''
   ws-opts:
     path: github.com/Alvin9999
+    headers:
+      Host: xray1.2413762.xyz
 - name: Location vmess 1
   type: vmess
   server: 104.26.3.12
   port: 2082
   uuid: 86e926b9-d67a-4c8f-a35e-024631838a45
+  alterId: 0
+  cipher: auto
   network: ws
-  tls: true
-  alter-id: 0
-  security: none
+  tls: false
+  servername: ''
   ws-opts:
     path: github.com/Alvin9999
+    headers:
+      Host: xray4.2413762.xyz
 - name: Location vmess 2
   type: vmess
   server: 172.64.170.111
   port: 2082
   uuid: 86e926b9-d67a-4c8f-a35e-024631838a45
+  alterId: 0
+  cipher: auto
   network: ws
-  tls: true
-  alter-id: 0
-  security: none
+  tls: false
+  servername: ''
   ws-opts:
     path: github.com/Alvin9999
+    headers:
+      Host: xray3.2413762.xyz
 - name: Location vmess 3
   type: vmess
   server: 104.19.143.111
   port: 2082
   uuid: 86e926b9-d67a-4c8f-a35e-024631838a45
+  alterId: 0
+  cipher: auto
   network: ws
-  tls: true
-  alter-id: 0
-  security: none
+  tls: false
+  servername: ''
   ws-opts:
     path: github.com/Alvin9999
+    headers:
+      Host: xray2.2413762.xyz
 proxy-groups:
 - name: 节点选择
   type: select
