@@ -166,9 +166,7 @@ def process_clash(data, index):
 def process_naive(data, index):
     try:
         json_data = json.loads(data)
-
         proxy_str = json_data["proxy"]
-        #proxy_str = proxy_str.replace("https://", "")
         naiveproxy = base64.b64encode(proxy_str.encode()).decode()
         merged_proxies.append(naiveproxy)
 
