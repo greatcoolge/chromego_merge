@@ -42,142 +42,127 @@ def get_physical_location(address):
         return "Unknown"
 #提取clash节点
 def process_clash(data, index):
-            # 解析YAML格式的内容
-            content = yaml.safe_load(data)
+    try:
+        # 解析YAML格式的内容
+        content = yaml.safe_load(data)
 
-            # 提取proxies部分并合并到merged_proxies中
-            proxies = content.get('proxies', [])
-            
-            for proxy in proxies:
-                # 如果类型是vless
-                if proxy['type'] == 'vless' :
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    udp = proxy.get("udp", "")
-                    uuid = proxy.get("uuid", "")
-                    network = proxy.get("network", "")
-                    tls = int(proxy.get("tls", 0))
-                    xudp = proxy.get("xudp", "")
-                    sni = proxy.get("servername", "")
-                    flow = proxy.get("flow", "")
-                    publicKey = proxy.get('reality-opts', {}).get('public-key', '')
-                    short_id = proxy.get('reality-opts', {}).get('short-id', '')
-                    fp = proxy.get("client-fingerprint", "")
-                    insecure = int(proxy.get("skip-cert-verify", 0))
-                    grpc_serviceName = proxy.get('grpc-opts', {}).get('grpc-service-name', '')
+        # 提取proxies部分并合并到merged_proxies中
+        proxies = content.get('proxies', [])
+        
+        for proxy in proxies:
+            proxy_type = proxy.get('type', '')
 
-                    ws_path = proxy.get('ws-opts', {}).get('path', '')
-                    ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
-                    if tls == 0:
-                        security = 'none'
-                    elif tls == 1 and publicKey != '':
-                        security = 'reality'
-                    else:
-                        security = 'tls'
-                    location = get_physical_location(server)
-                    name = f"{location} vless {index}"
-                    vless_meta =  f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}#{name}"
+            if proxy_type == 'vless':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                uuid = proxy.get("uuid", "")
+                network = proxy.get("network", "")
+                tls = int(proxy.get("tls", 0))
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                sni = proxy.get("servername", "")
+                publicKey = proxy.get('reality-opts', {}).get('public-key', '')
+                short_id = proxy.get('reality-opts', {}).get('short-id', '')
+                fp = proxy.get("client-fingerprint", "")
+                grpc_serviceName = proxy.get('grpc-opts', {}).get('grpc-service-name', '')
+                ws_path = proxy.get('ws-opts', {}).get('path', '')
+                ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
 
-                    merged_proxies.append(vless_meta)
+                security = 'none' if tls == 0 else 'reality' if publicKey else 'tls'
+                location = get_physical_location(server)
+                name = f"{location} vless {index}"
+                vless_meta =  f"vless://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&flow={flow}&type={network}&fp={fp}&pbk={publicKey}&sid={short_id}&sni={sni}&serviceName={grpc_serviceName}&path={ws_path}&host={ws_headers_host}#{name}"
+                merged_proxies.append(vless_meta)
 
-                if proxy['type'] == 'vmess' :
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    uuid = proxy.get("uuid", "")
-                    #cipher = proxy.get("cipher", "")
-                    alterId = proxy.get("alterId", "")
-                    network = proxy.get("network", "")
-                    tls = int(proxy.get("tls", 0))
-                    if tls == 0:
-                        security = "none"
-                    elif tls == 1:
-                        security = "tls"
-                    sni = proxy.get("servername", "")
-                    ws_path = proxy.get('ws-opts', {}).get('path', '')
-                    ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
-                    location = get_physical_location(server)
-                    name = f"{location} vmess {index}"
-                    vmess_meta =  f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure{insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}#{name}"
+            elif proxy_type == 'vmess':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                uuid = proxy.get("uuid", "")
+                alterId = proxy.get("alterId", "")
+                network = proxy.get("network", "")
+                tls = int(proxy.get("tls", 0))
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                sni = proxy.get("servername", "")
+                ws_path = proxy.get('ws-opts', {}).get('path', '')
+                ws_headers_host = proxy.get('ws-opts', {}).get('headers', {}).get('Host', '')
+                security = 'none' if tls == 0 else 'tls'
+                location = get_physical_location(server)
+                name = f"{location} vmess {index}"
+                vmess_meta =  f"vmess://{uuid}@{server}:{port}?security={security}&allowInsecure={insecure}&type={network}&fp={fp}&sni={sni}&path={ws_path}&host={ws_headers_host}#{name}"
+                merged_proxies.append(vmess_meta)
 
-                    merged_proxies.append(vmess_meta)
+            elif proxy_type == 'tuic':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                uuid = proxy.get("uuid", "")
+                password = proxy.get("password", "")
+                sni = proxy.get("sni", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                udp_relay_mode = proxy.get("udp-relay-mode", "naive")
+                congestion = proxy.get("congestion-controller", "bbr")
+                alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy.get("alpn", [])) > 0 else None
+                location = get_physical_location(server)
+                name = f"{location} tuic {index}"
+                tuic_meta = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}#{name}"
+                merged_proxies.append(tuic_meta)
 
-                elif proxy['type'] == 'tuic':
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    uuid = proxy.get("uuid", "")
-                    password = proxy.get("password", "")
-                    sni = proxy.get("sni", "")
-                    insecure = int(proxy.get("skip-cert-verify", 0))
-                    udp_relay_mode = proxy.get("udp-relay-mode", "naive")
-                    congestion = proxy.get("congestion-controller", "bbr")
-                    alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
-                    location = get_physical_location(server)
-                    name = f"{location} tuic {index}"
-                    #tuic_meta_neko = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure={insecure}&alpn={alpn}&mode={udp_relay_mode}"
-                    tuic_meta = f"tuic://{uuid}:{password}@{server}:{port}?sni={sni}&congestion_control={congestion}&udp_relay_mode={udp_relay_mode}&alpn={alpn}&allow_insecure={insecure}#{name}"
-                    merged_proxies.append(tuic_meta)
+            elif proxy_type == 'hysteria2':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                auth = proxy.get("password", "")
+                obfs = proxy.get("obfs", "")
+                obfs_password = proxy.get("obfs-password", "")
+                sni = proxy.get("sni", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                location = get_physical_location(server)
+                name = f"{location} hysteria2 {index}"
+                hy2_meta = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}#{name}"
+                merged_proxies.append(hy2_meta)
 
-                elif proxy['type'] == "hysteria2":
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    auth = proxy.get("password", "")
-                    obfs = proxy.get("obfs", "")
-                    obfs_password = proxy.get("obfs-password","")
-                    sni = proxy.get("sni", "")
-                    insecure = int(proxy.get("skip-cert-verify", 0))
-                    location = get_physical_location(server)
-                    name = f"{location} hysteria2 {index}"
-                    hy2_meta = f"hysteria2://{auth}@{server}:{port}?insecure={insecure}&sni={sni}&obfs={obfs}&obfs-password={obfs_password}#{name}"
-                    merged_proxies.append(hy2_meta)
+            elif proxy_type == 'hysteria':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                protocol = proxy.get("protocol", "udp")
+                up_mbps = 50
+                down_mbps = 80
+                alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy.get("alpn", [])) > 0 else None
+                obfs = proxy.get("obfs", "")
+                insecure = int(proxy.get("skip-cert-verify", 0))
+                sni = proxy.get("sni", "")
+                fast_open = int(proxy.get("fast_open", 1))
+                auth = proxy.get("auth-str", "")
+                location = get_physical_location(server)
+                name = f"{location} hysteria {index}"
+                hysteria_meta = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#{name}"
+                merged_proxies.append(hysteria_meta)
 
-                elif proxy['type'] == 'hysteria':
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    ports = proxy.get("port", "")
-                    protocol = proxy.get("protocol", "udp")
-                    up_mbps = 50
-                    down_mbps = 80                   
-                    alpn = proxy.get("alpn", [])[0] if proxy.get("alpn") and len(proxy["alpn"]) > 0 else None
-                    obfs = proxy.get("obfs", "")
-                    insecure = int(proxy.get("skip-cert-verify", 0))
-                    sni = proxy.get("sni", "")
-                    fast_open = int(proxy.get("fast_open", 1))
-                    auth = proxy.get("auth-str", "")
-                    # 生成URL
-                    location = get_physical_location(server)
-                    name = f"{location} hysteria {index}"
-                    hysteria_meta = f"hysteria://{server}:{port}?peer={sni}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={ports}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#{name}"
-                    merged_proxies.append(hysteria_meta)
+            elif proxy_type == 'ssr':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                password = proxy.get("password", "")
+                password = base64.b64encode(password.encode()).decode()
+                cipher = proxy.get("cipher", "")
+                obfs = proxy.get("obfs", "")
+                protocol = proxy.get("protocol", "")
+                protocol_param = proxy.get("protocol-param", "")
+                protocol_param = base64.b64encode(protocol_param.encode()).decode()
+                obfs_param = proxy.get("obfs-param", "")
+                obfs_param = base64.b64encode(obfs_param.encode()).decode()
+                ssr_source = f"{server}:{port}:{protocol}:{cipher}:{obfs}:{password}/?obfsparam={obfs_param}&protoparam={protocol_param}&remarks=ssr_meta_{index}&protoparam={protocol_param}=&obfsparam={obfs_param}"
+                ssr_source = base64.b64encode(ssr_source.encode()).decode()
+                ssr_meta = f"ssr://{ssr_source}"
+                merged_proxies.append(ssr_meta)
 
-                elif proxy['type'] == 'ssr':
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    password = proxy.get("password", "")
-                    password = base64.b64encode(password.encode()).decode()
-                    cipher = proxy.get("cipher", "")
-                    obfs = proxy.get("obfs", "")
-                    protocol = proxy.get("protocol", "")
-                    protocol_param = proxy.get("protocol-param", "")
-                    protocol_param = base64.b64encode(protocol_param.encode()).decode()
-                    obfs_param = proxy.get("obfs-param", "")
-                    obfs_param = base64.b64encode(obfs_param.encode()).decode()
-                    # 生成URL
-                    ssr_source=f"{server}:{port}:{protocol}:{cipher}:{obfs}:{password}/?obfsparam={obfs_param}&protoparam={protocol_param}&remarks=ssr_meta_{index}&protoparam{protocol_param}=&obfsparam={obfs_param}"
-                    ssr_source=base64.b64encode(ssr_source.encode()).decode()
-                    ssr_meta = f"ssr://{ssr_source}"
-                    merged_proxies.append(ssr_meta)
-                #目前仅支持最原始版本ss，无插件支持
-                elif proxy['type'] == 'sstest':
-                    server = proxy.get("server", "")
-                    port = int(proxy.get("port", 443))
-                    password = proxy.get("password", "")
-                    cipher = proxy.get("cipher", "")
-                    # 生成URL
-                    ss_source=f"{cipher}:{password}@{server}:{port}"
-                    
-                    ss_source=base64.b64encode(ss_source.encode()).decode()
-                    ss_meta = f"ss://{ss_source}"
-                    merged_proxies.append(ss_meta)
+            elif proxy_type == 'sstest':
+                server = proxy.get("server", "")
+                port = int(proxy.get("port", 443))
+                password = proxy.get("password", "")
+                cipher = proxy.get("cipher", "")
+                ss_source = f"{cipher}:{password}@{server}:{port}"
+                ss_source = base64.b64encode(ss_source.encode()).decode()
+                ss_meta = f"ss://{ss_source}"
+                merged_proxies.append(ss_meta)
+
+
 def process_naive(data, index):
     try:
         json_data = json.loads(data)
