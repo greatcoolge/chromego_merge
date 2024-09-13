@@ -187,71 +187,7 @@ def process_xray(data, index):
         protocol = first_outbound.get("protocol", "")
         logging.debug(f"Protocol found: {protocol}")
 
-        if protocol == "vless":
-            settings = first_outbound.get("settings", {})
-            vnext = settings.get("vnext", [{}])[0]
-            streamSettings = first_outbound.get("streamSettings", {})
-
-            server = vnext.get("address", "")
-            port = vnext.get("port", "")
-            uuid = vnext.get("users", [{}])[0].get("id", "")
-            flow = vnext.get("users", [{}])[0].get("flow", "")
-            network = streamSettings.get("network", "")
-            realitySettings = streamSettings.get("realitySettings", {})
-            publicKey = realitySettings.get("publicKey", "")
-            shortId = realitySettings.get("shortId", "")
-            serverName = realitySettings.get("serverName", "")
-            fingerprint = realitySettings.get("fingerprint", "")
-            isudp = True
-            location = get_physical_location(server)
-            name = f"{location} vless {index}"
-
-            if network == "tcp":
-                proxy = {
-                    "name": name,
-                    "type": protocol,
-                    "server": server,
-                    "port": port,
-                    "uuid": uuid,
-                    "network": network,
-                    "tls": True,
-                    "udp": isudp,
-                    "flow": flow,
-                    "client-fingerprint": fingerprint,
-                    "servername": serverName,
-                    "reality-opts": {
-                        "public-key": publicKey,
-                        "short-id": shortId
-                    }
-                }
-                logging.debug(f"TCP Proxy: {proxy}")
-
-            elif network == "grpc":
-                grpcSettings = streamSettings.get("grpcSettings", {})
-                serviceName = grpcSettings.get("serviceName", "")
-                proxy = {
-                    "name": name,
-                    "type": protocol,
-                    "server": server,
-                    "port": port,
-                    "uuid": uuid,
-                    "network": network,
-                    "tls": True,
-                    "udp": isudp,
-                    "flow": flow,
-                    "client-fingerprint": fingerprint,
-                    "servername": serverName,
-                    "grpc-opts": {
-                        "grpc-service-name": serviceName
-                    },
-                    "reality-opts": {
-                        "public-key": publicKey,
-                        "short-id": shortId
-                    }
-                }
-                logging.debug(f"GRPC Proxy: {proxy}")
-
-        elif protocol == "vmess":
+        if protocol == "vmess":
             settings = first_outbound.get("settings", {})
             vnext = settings.get("vnext", [{}])[0]
             streamSettings = first_outbound.get("streamSettings", {})
@@ -314,7 +250,8 @@ def process_xray(data, index):
             logging.warning(f"No proxy configuration found for index {index}")
 
     except Exception as e:
-        logging.error(f"Error processing xray data for index {index}: {e}") 
+        logging.error(f"Error processing xray data for index {index}: {e}")
+ 
 
 
 def update_proxy_groups(config_data, merged_proxies):
