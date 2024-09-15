@@ -3,6 +3,7 @@ import json
 import urllib.request
 import logging
 import geoip2.database
+import requests
 import socket
 import re
 # 提取节点
@@ -30,35 +31,22 @@ def process_clash(data, index):
     merged_proxies.extend(proxies)
 
 def get_physical_location(address):
-    address = re.sub(':.*', '', address)  # 去掉端口部分
-    try:
-        # 尝试使用 ipinfo.io API 获取国家
-        response = requests.get(f"https://ipinfo.io/{address}/json")
-        data = response.json()
-        country = data.get("country", "Unknown Country")
-        return country
-    except Exception as e:
-        logging.error(f"Error fetching location from ipinfo.io for address {address}: {e}")
-
-    # 如果 API 请求失败，回退到 GeoLite2-City 数据库
+    address = re.sub(':.*', '', address)  # 用正则表达式去除端口部分
     try:
         ip_address = socket.gethostbyname(address)
-        reader = geoip2.database.Reader('GeoLite2-City.mmdb')
+    except socket.gaierror:
+        ip_address = address
+
+    try:
+        reader = geoip2.database.Reader('GeoLite2-City.mmdb')  # 这里的路径需要指向你自己的数据库文件
         response = reader.city(ip_address)
         country = response.country.name
-        return country
+        city = response.city.name
+        #return f"{country}_{city}"
+        return f"{country}"
     except geoip2.errors.AddressNotFoundError as e:
-        logging.error(f"GeoLite2 database error: {e}")
+        print(f"Error: {e}")
         return "Unknown"
-    except FileNotFoundError:
-        logging.error("GeoLite2 database file not found.")
-        return "Database not found"
-    except Exception as e:
-        logging.error(f"Unexpected error: {e}")
-        return "Error"
-    finally:
-        if 'reader' in locals():
-            reader.close()  # 确保数据库文件被关闭
 
 # 处理sb，待办
 def process_sb(data, index):
@@ -326,17 +314,79 @@ def process_xray(data, index):
 
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
+
+# 添加获取物理位置函数
+def get_physical_location(server):
+    try:
+        response = requests.get(f"https://ipinfo.io/{server}/json")
+        data = response.json()
+        country = data.get("country", "Unknown Country")
+        city = data.get("city", "")
+
+        # 确保返回的格式为 "US New York" 或者 "US"
+        if city:
+            return f"{country} {city}"
+        else:
+            return country
+    except Exception as e:
+        logging.error(f"Error fetching location for server {server}: {e}")
+        return "Unknown Country"
+
+# ... existing code ...
+
+def update_proxy_groups(config_data, merged_proxies):
+    for group in config_data['proxy-groups']:
+        if group['name'] in ['自动选择', '节点选择']:
+            if 'proxies' not in group or not group['proxies']:
+                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
+            else:
+                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
+
+def update_warp_proxy_groups(config_warp_data, merged_proxies):
+    for group in config_warp_data['proxy-groups']:
+        if group['name'] in ['自动选择', '手动选择', '负载均衡']:
+            if 'proxies' not in group or not group['proxies']:
+                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
+            else:
+                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
+# Ensure merged_proxies is a global variable
 merged_proxies = []
 
-# 读取各个 URL 文件并处理
+# Process the URLs
 process_urls('./urls/clash_urls.txt', process_clash)
-process_urls('./urls/hysteria_urls.txt', process_hysteria)
+# process_urls('./urls/sb_urls.txt', process_sb)
 process_urls('./urls/clashmeta.txt', process_clash)
+process_urls('./urls/hysteria_urls.txt', process_hysteria)
 process_urls('./urls/hysteria2_urls.txt', process_hysteria2)
 process_urls('./urls/xray_urls.txt', process_xray)
 
-# 将合并后的代理列表写入 YAML 文件
-with open('./sub/merged_proxies.yaml', 'w', encoding='utf-8') as file:
-    yaml.dump({'proxies': merged_proxies}, file, sort_keys=False, allow_unicode=True)
+# Load the templates
+with open('./templates/clash_template.yaml', 'r', encoding='utf-8') as file:
+    config_data = yaml.safe_load(file)
+
+with open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file:
+    config_warp_data = yaml.safe_load(file)
+
+# Add merged proxies
+if 'proxies' not in config_data or not config_data['proxies']:
+    config_data['proxies'] = merged_proxies
+else:
+    config_data['proxies'].extend(merged_proxies)
+
+if 'proxies' not in config_warp_data or not config_warp_data['proxies']:
+    config_warp_data['proxies'] = merged_proxies
+else:
+    config_warp_data['proxies'].extend(merged_proxies)
+
+# Update proxy groups
+update_proxy_groups(config_data, merged_proxies)
+update_warp_proxy_groups(config_warp_data, merged_proxies)
+
+# Write the results to YAML files
+with open('./sub/merged_proxies_new.yaml', 'w', encoding='utf-8') as file:
+    yaml.dump(config_data, file, sort_keys=False, allow_unicode=True)
+
+with open('./sub/merged_warp_proxies_new.yaml', 'w', encoding='utf-8') as file:
+    yaml.dump(config_warp_data, file, sort_keys=False, allow_unicode=True)
 
 print("聚合完成")
