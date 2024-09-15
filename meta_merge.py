@@ -30,22 +30,35 @@ def process_clash(data, index):
     merged_proxies.extend(proxies)
 
 def get_physical_location(address):
-    address = re.sub(':.*', '', address)  # 用正则表达式去除端口部分
+    address = re.sub(':.*', '', address)  # 去掉端口部分
+    try:
+        # 尝试使用 ipinfo.io API 获取国家
+        response = requests.get(f"https://ipinfo.io/{address}/json")
+        data = response.json()
+        country = data.get("country", "Unknown Country")
+        return country
+    except Exception as e:
+        logging.error(f"Error fetching location from ipinfo.io for address {address}: {e}")
+
+    # 如果 API 请求失败，回退到 GeoLite2-City 数据库
     try:
         ip_address = socket.gethostbyname(address)
-    except socket.gaierror:
-        ip_address = address
-
-    try:
-        reader = geoip2.database.Reader('GeoLite2-City.mmdb')  # 这里的路径需要指向你自己的数据库文件
+        reader = geoip2.database.Reader('geoip/GeoLite2-City.mmdb')
         response = reader.city(ip_address)
         country = response.country.name
-        city = response.city.name
-        #return f"{country}_{city}"
-        return f"{country}"
+        return country
     except geoip2.errors.AddressNotFoundError as e:
-        print(f"Error: {e}")
+        logging.error(f"GeoLite2 database error: {e}")
         return "Unknown"
+    except FileNotFoundError:
+        logging.error("GeoLite2 database file not found.")
+        return "Database not found"
+    except Exception as e:
+        logging.error(f"Unexpected error: {e}")
+        return "Error"
+    finally:
+        if 'reader' in locals():
+            reader.close()  # 确保数据库文件被关闭
 
 # 处理sb，待办
 def process_sb(data, index):
@@ -173,30 +186,40 @@ def process_hysteria2(data, index):
 
 #处理xray
 def process_xray(data, index):
+    proxy = None
     try:
         json_data = json.loads(data)
-        # 处理 xray 数据
-        protocol = json_data["outbounds"][0]["protocol"]
-        #vless操作
+        logging.debug(f"Processing data for index {index}: {json_data}")
+
+        outbounds = json_data.get("outbounds", [])
+        if not outbounds:
+            logging.warning(f"No 'outbounds' found for index {index}")
+            return
+
+        first_outbound = outbounds[0]
+        protocol = first_outbound.get("protocol", "")
+        logging.debug(f"Protocol found: {protocol}")
+
         if protocol == "vless":
-        # 提取所需字段
-            server = json_data["outbounds"][0]["settings"]["vnext"][0]["address"]
-            port = json_data["outbounds"][0]["settings"]["vnext"][0]["port"]
-            uuid = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["id"]
+            settings = first_outbound.get("settings", {})
+            vnext = settings.get("vnext", [{}])[0]
+            streamSettings = first_outbound.get("streamSettings", {})
+
+            server = vnext.get("address", "")
+            port = vnext.get("port", "")
+            uuid = vnext.get("users", [{}])[0].get("id", "")
             istls = True
-            flow = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["flow"]
-            # 传输方式
-            network = json_data["outbounds"][0]["streamSettings"]["network"]
-            publicKey = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["publicKey"]
-            shortId = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["shortId"]
-            serverName = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["serverName"]
-            fingerprint = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["fingerprint"]
-            # udp转发
+            flow = vnext.get("users", [{}])[0].get("flow", "")
+            network = streamSettings.get("network", "")
+            realitySettings = streamSettings.get("realitySettings", {})
+            publicKey = realitySettings.get("publicKey", "")
+            shortId = realitySettings.get("shortId", "")
+            serverName = realitySettings.get("serverName", "")
+            fingerprint = realitySettings.get("fingerprint", "")
             isudp = True
             location = get_physical_location(server)
             name = f"{location} vless {index}"
-            
-            # 根据network判断tcp
+
             if network == "tcp":
                 proxy = {
                     "name": name,
@@ -209,17 +232,17 @@ def process_xray(data, index):
                     "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
-                    "servername": serverName,                
-                    "reality-opts":{
+                    "servername": serverName,
+                    "reality-opts": {
                         "public-key": publicKey,
-                        "short-id": shortId}
+                        "short-id": shortId
+                    }
                 }
-                
-            # 根据network判断grpc
+                logging.debug(f"TCP Proxy: {proxy}")
+
             elif network == "grpc":
-                serviceName = json_data["outbounds"][0]["streamSettings"]["grpcSettings"]["serviceName"]
-                
-                # 创建当前网址的proxy字典
+                grpcSettings = streamSettings.get("grpcSettings", {})
+                serviceName = grpcSettings.get("serviceName", "")
                 proxy = {
                     "name": name,
                     "type": protocol,
@@ -232,36 +255,77 @@ def process_xray(data, index):
                     "flow": flow,
                     "client-fingerprint": fingerprint,
                     "servername": serverName,
-                    "grpc-opts":{
+                    "grpc-opts": {
                         "grpc-service-name": serviceName
                     },
-                    "reality-opts":{
+                    "reality-opts": {
                         "public-key": publicKey,
-                        "short-id": shortId}
+                        "short-id": shortId
+                    }
                 }
+                logging.debug(f"GRPC Proxy: {proxy}")
 
-        # 将当前proxy字典添加到所有proxies列表中
-        merged_proxies.append(proxy)
+        elif protocol == "vmess":
+            settings = first_outbound.get("settings", {})
+            vnext = settings.get("vnext", [{}])[0]
+            streamSettings = first_outbound.get("streamSettings", {})
+
+            server = vnext.get("address", "")
+            port = vnext.get("port", "")
+            uuid = vnext.get("users", [{}])[0].get("id", "")
+            alterId = vnext.get("users", [{}])[0].get("alterId", 0)
+            network = streamSettings.get("network", "")
+            security = streamSettings.get("security", "none")
+            location = get_physical_location(server)
+            name = f"{location} vmess {index}"
+
+            if network == "tcp":
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "alterId": alterId,
+                    "cipher": "auto",
+                    "network": network,
+                    "tls": security == "tls",
+                    "udp": True
+                }
+                logging.debug(f"TCP Proxy: {proxy}")
+
+            elif network == "ws":
+                wsSettings = streamSettings.get("wsSettings", {})
+                path = wsSettings.get("path", "")
+                headers = wsSettings.get("headers", {})
+                proxy = {
+                    "name": name,
+                    "type": protocol,
+                    "server": server,
+                    "port": port,
+                    "uuid": uuid,
+                    "alterId": alterId,
+                    "cipher": "auto",
+                    "network": network,
+                    "tls": security == "tls",
+                    "servername": streamSettings.get("serverName", ""),
+                    "ws-opts": {
+                        "path": path,
+                        "headers": headers
+                    }
+                }
+                logging.debug(f"WS Proxy: {proxy}")
+
+        else:
+            logging.warning(f"Unsupported protocol: {protocol}")
+
+        if proxy:
+            merged_proxies.append(proxy)
+        else:
+            logging.warning(f"No proxy configuration found for index {index}")
+
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
-
-def update_proxy_groups(config_data, merged_proxies):
-    for group in config_data['proxy-groups']:
-        if group['name'] in ['自动选择', '节点选择']:
-            if 'proxies' not in group or not group['proxies']:
-                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
-            else:
-                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
-
-def update_warp_proxy_groups(config_warp_data, merged_proxies):
-    for group in config_warp_data['proxy-groups']:
-        if group['name'] in ['自动选择', '手动选择', '负载均衡']:
-            if 'proxies' not in group or not group['proxies']:
-                group['proxies'] = [proxy['name'] for proxy in merged_proxies]
-            else:
-                group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
-
-# 包含hysteria2
 merged_proxies = []
 
 # 处理 clash URLs
