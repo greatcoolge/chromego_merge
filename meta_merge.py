@@ -315,24 +315,6 @@ def process_xray(data, index):
     except Exception as e:
         logging.error(f"Error processing xray data for index {index}: {e}")
 
-# 添加获取物理位置函数
-def get_physical_location(server):
-    try:
-        response = requests.get(f"https://ipinfo.io/{server}/json")
-        data = response.json()
-        country = data.get("country", "Unknown Country")
-        city = data.get("city", "")
-
-        # 确保返回的格式为 "US New York" 或者 "US"
-        if city:
-            return f"{country} {city}"
-        else:
-            return country
-    except Exception as e:
-        logging.error(f"Error fetching location for server {server}: {e}")
-        return "Unknown Country"
-
-# ... existing code ...
 
 def update_proxy_groups(config_data, merged_proxies):
     for group in config_data['proxy-groups']:
