@@ -3095,7 +3095,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip30.6929198.xyz
-- name: None vmess 394
+- name: United States vmess 394
   type: vmess
   server: icook.tw
   port: 2082
@@ -3125,7 +3125,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip30.6929198.xyz
-- name: United States vmess 396
+- name: None vmess 396
   type: vmess
   server: japan.com
   port: 2082
@@ -3782,9 +3782,9 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - None vmess 394
+  - United States vmess 394
   - United States vmess 395
-  - United States vmess 396
+  - None vmess 396
   - None vmess 397
   - None vmess 398
   - United States vmess 399
@@ -4019,9 +4019,9 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - None vmess 394
+  - United States vmess 394
   - United States vmess 395
-  - United States vmess 396
+  - None vmess 396
   - None vmess 397
   - None vmess 398
   - United States vmess 399
@@ -4256,9 +4256,9 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - None vmess 394
+  - United States vmess 394
   - United States vmess 395
-  - United States vmess 396
+  - None vmess 396
   - None vmess 397
   - None vmess 398
   - United States vmess 399
