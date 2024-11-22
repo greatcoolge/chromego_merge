@@ -1450,7 +1450,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c2.6016725.xyz
-- name: None vmess 096
+- name: United States vmess 096
   type: vmess
   server: japan.com
   port: 2095
@@ -1525,7 +1525,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c2.6016725.xyz
-- name: United States vmess 0101
+- name: None vmess 0101
   type: vmess
   server: www.visa.com
   port: 2095
@@ -3109,7 +3109,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip30.6929198.xyz
-- name: United States vmess 396
+- name: None vmess 396
   type: vmess
   server: japan.com
   port: 2082
@@ -3124,7 +3124,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip30.6929198.xyz
-- name: None vmess 397
+- name: United States vmess 397
   type: vmess
   server: malaysia.com
   port: 2082
@@ -3184,7 +3184,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: ip30.6929198.xyz
-- name: United States vmess 3101
+- name: None vmess 3101
   type: vmess
   server: www.visa.com
   port: 2082
@@ -3644,12 +3644,12 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - None vmess 096
+  - United States vmess 096
   - None vmess 097
   - None vmess 098
   - None vmess 099
   - None vmess 0100
-  - United States vmess 0101
+  - None vmess 0101
   - None vmess 11
   - None vmess 12
   - None vmess 13
@@ -3753,12 +3753,12 @@ proxy-groups:
   - Canada vmess 393
   - United States vmess 394
   - None vmess 395
-  - United States vmess 396
-  - None vmess 397
+  - None vmess 396
+  - United States vmess 397
   - United States vmess 398
   - None vmess 399
   - None vmess 3100
-  - United States vmess 3101
+  - None vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
@@ -3884,12 +3884,12 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - None vmess 096
+  - United States vmess 096
   - None vmess 097
   - None vmess 098
   - None vmess 099
   - None vmess 0100
-  - United States vmess 0101
+  - None vmess 0101
   - None vmess 11
   - None vmess 12
   - None vmess 13
@@ -3993,12 +3993,12 @@ proxy-groups:
   - Canada vmess 393
   - United States vmess 394
   - None vmess 395
-  - United States vmess 396
-  - None vmess 397
+  - None vmess 396
+  - United States vmess 397
   - United States vmess 398
   - None vmess 399
   - None vmess 3100
-  - United States vmess 3101
+  - None vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
