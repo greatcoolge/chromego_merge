@@ -1450,7 +1450,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: None vmess 096
+- name: United States vmess 096
   type: vmess
   server: japan.com
   port: 2095
@@ -1465,7 +1465,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: None vmess 097
+- name: United States vmess 097
   type: vmess
   server: malaysia.com
   port: 2095
@@ -1480,7 +1480,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: None vmess 098
+- name: United States vmess 098
   type: vmess
   server: russia.com
   port: 2095
@@ -1495,7 +1495,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: United States vmess 099
+- name: None vmess 099
   type: vmess
   server: singapore.com
   port: 2095
@@ -1510,7 +1510,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: None vmess 0100
+- name: United States vmess 0100
   type: vmess
   server: skk.moe
   port: 2095
@@ -3079,7 +3079,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: United States vmess 394
+- name: None vmess 394
   type: vmess
   server: icook.tw
   port: 2082
@@ -3094,7 +3094,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: None vmess 395
+- name: United States vmess 395
   type: vmess
   server: ip.sb
   port: 2082
@@ -3124,7 +3124,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: United States vmess 397
+- name: None vmess 397
   type: vmess
   server: malaysia.com
   port: 2082
@@ -3154,7 +3154,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: None vmess 399
+- name: United States vmess 399
   type: vmess
   server: singapore.com
   port: 2082
@@ -3169,7 +3169,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: None vmess 3100
+- name: United States vmess 3100
   type: vmess
   server: skk.moe
   port: 2082
@@ -3184,7 +3184,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e1.6929198.xyz
-- name: None vmess 3101
+- name: United States vmess 3101
   type: vmess
   server: www.visa.com
   port: 2082
@@ -3343,62 +3343,54 @@ proxies:
     early-data-header-name: Sec-WebSocket-Protocol
     v2ray-http-upgrade: true
     v2ray-http-upgrade-fast-open: true
-- name: Russia vless 61
-  type: vless
-  server: 46.29.166.206
-  port: 49887
-  uuid: ef6706c2-ac66-4c39-bf16-208effa86922
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.paypal.com
-  reality-opts:
-    public-key: bBX2IBet-d-kWJ7sb_49zVaem3iTAw5jIwQL4JGDuEg
-    short-id: ''
-  client-fingerprint: chrome
-- name: Russia vless 71
-  type: vless
-  server: 46.29.166.206
-  port: 49887
-  uuid: ef6706c2-ac66-4c39-bf16-208effa86922
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.paypal.com
-  reality-opts:
-    public-key: bBX2IBet-d-kWJ7sb_49zVaem3iTAw5jIwQL4JGDuEg
-    short-id: ''
-  client-fingerprint: chrome
-- name: Russia vless 81
-  type: vless
-  server: 46.29.166.206
-  port: 49887
-  uuid: ef6706c2-ac66-4c39-bf16-208effa86922
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.paypal.com
-  reality-opts:
-    public-key: bBX2IBet-d-kWJ7sb_49zVaem3iTAw5jIwQL4JGDuEg
-    short-id: ''
-  client-fingerprint: chrome
-- name: Russia vless 91
-  type: vless
-  server: 46.29.166.206
-  port: 49887
-  uuid: ef6706c2-ac66-4c39-bf16-208effa86922
-  network: tcp
-  udp: true
-  tls: true
-  flow: xtls-rprx-vision
-  servername: www.paypal.com
-  reality-opts:
-    public-key: bBX2IBet-d-kWJ7sb_49zVaem3iTAw5jIwQL4JGDuEg
-    short-id: ''
-  client-fingerprint: chrome
+- name: United States hysteria 61
+  type: hysteria
+  server: 166.1.18.42
+  port: 37950
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  alpn:
+  - h3
+  sni: bing.com
+  skip-cert-verify: true
+  up: 11 Mbps
+  down: 55 Mbps
+- name: United States hysteria 71
+  type: hysteria
+  server: 166.1.18.42
+  port: 37950
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  alpn:
+  - h3
+  sni: bing.com
+  skip-cert-verify: true
+  up: 11 Mbps
+  down: 55 Mbps
+- name: United States hysteria 81
+  type: hysteria
+  server: 166.1.18.42
+  port: 37950
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  alpn:
+  - h3
+  sni: bing.com
+  skip-cert-verify: true
+  up: 11 Mbps
+  down: 55 Mbps
+- name: United States hysteria 91
+  type: hysteria
+  server: 166.1.18.42
+  port: 37950
+  ports: 10000-20000
+  auth_str: dongtaiwang.com
+  alpn:
+  - h3
+  sni: bing.com
+  skip-cert-verify: true
+  up: 11 Mbps
+  down: 55 Mbps
 - name: Russia hysteria 0
   type: hysteria
   server: 46.17.43.223
@@ -3457,32 +3449,32 @@ proxies:
   - h3
 - name: Russia hysteria2 0
   type: hysteria2
-  server: 185.22.152.93
-  port: 47382
+  server: 46.17.41.189
+  port: 50717
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
 - name: Russia hysteria2 1
   type: hysteria2
-  server: 185.22.152.93
-  port: 47382
+  server: 46.17.41.189
+  port: 50717
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
 - name: Russia hysteria2 2
   type: hysteria2
-  server: 185.22.152.93
-  port: 47382
+  server: 46.17.41.189
+  port: 50717
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
   skip-cert-verify: true
 - name: Russia hysteria2 3
   type: hysteria2
-  server: 185.22.152.93
-  port: 47382
+  server: 46.17.41.189
+  port: 50717
   password: dongtaiwang.com
   fast-open: true
   sni: www.bing.com
@@ -3644,11 +3636,11 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - None vmess 096
-  - None vmess 097
-  - None vmess 098
-  - United States vmess 099
-  - None vmess 0100
+  - United States vmess 096
+  - United States vmess 097
+  - United States vmess 098
+  - None vmess 099
+  - United States vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
@@ -3751,14 +3743,14 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - United States vmess 394
-  - None vmess 395
+  - None vmess 394
+  - United States vmess 395
   - United States vmess 396
-  - United States vmess 397
+  - None vmess 397
   - None vmess 398
-  - None vmess 399
-  - None vmess 3100
-  - None vmess 3101
+  - United States vmess 399
+  - United States vmess 3100
+  - United States vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
@@ -3767,10 +3759,10 @@ proxy-groups:
   - None vmess 52
   - None vmess 53
   - None vmess 54
-  - Russia vless 61
-  - Russia vless 71
-  - Russia vless 81
-  - Russia vless 91
+  - United States hysteria 61
+  - United States hysteria 71
+  - United States hysteria 81
+  - United States hysteria 91
   - Russia hysteria 0
   - Russia hysteria 1
   - Russia hysteria 2
@@ -3884,11 +3876,11 @@ proxy-groups:
   - Canada vmess 093
   - None vmess 094
   - United States vmess 095
-  - None vmess 096
-  - None vmess 097
-  - None vmess 098
-  - United States vmess 099
-  - None vmess 0100
+  - United States vmess 096
+  - United States vmess 097
+  - United States vmess 098
+  - None vmess 099
+  - United States vmess 0100
   - None vmess 0101
   - None vmess 11
   - None vmess 12
@@ -3991,14 +3983,14 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - United States vmess 394
-  - None vmess 395
+  - None vmess 394
+  - United States vmess 395
   - United States vmess 396
-  - United States vmess 397
+  - None vmess 397
   - None vmess 398
-  - None vmess 399
-  - None vmess 3100
-  - None vmess 3101
+  - United States vmess 399
+  - United States vmess 3100
+  - United States vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
@@ -4007,10 +3999,10 @@ proxy-groups:
   - None vmess 52
   - None vmess 53
   - None vmess 54
-  - Russia vless 61
-  - Russia vless 71
-  - Russia vless 81
-  - Russia vless 91
+  - United States hysteria 61
+  - United States hysteria 71
+  - United States hysteria 81
+  - United States hysteria 91
   - Russia hysteria 0
   - Russia hysteria 1
   - Russia hysteria 2
