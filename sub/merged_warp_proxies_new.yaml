@@ -1496,7 +1496,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: None vmess 098
+- name: United States vmess 098
   type: vmess
   server: russia.com
   port: 2095
@@ -1526,7 +1526,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: United States vmess 0100
+- name: None vmess 0100
   type: vmess
   server: skk.moe
   port: 2095
@@ -1541,7 +1541,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: c3.6016725.xyz
-- name: United States vmess 0101
+- name: None vmess 0101
   type: vmess
   server: www.visa.com
   port: 2095
@@ -3095,7 +3095,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e2.6929198.xyz
-- name: United States vmess 394
+- name: None vmess 394
   type: vmess
   server: icook.tw
   port: 2082
@@ -3125,7 +3125,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e2.6929198.xyz
-- name: None vmess 396
+- name: United States vmess 396
   type: vmess
   server: japan.com
   port: 2082
@@ -3155,7 +3155,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e2.6929198.xyz
-- name: None vmess 398
+- name: United States vmess 398
   type: vmess
   server: russia.com
   port: 2082
@@ -3185,7 +3185,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e2.6929198.xyz
-- name: United States vmess 3100
+- name: None vmess 3100
   type: vmess
   server: skk.moe
   port: 2082
@@ -3200,7 +3200,7 @@ proxies:
     path: github.com/Alvin9999
     headers:
       Host: e2.6929198.xyz
-- name: None vmess 3101
+- name: United States vmess 3101
   type: vmess
   server: www.visa.com
   port: 2082
@@ -3669,10 +3669,10 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - None vmess 098
+  - United States vmess 098
   - None vmess 099
-  - United States vmess 0100
-  - United States vmess 0101
+  - None vmess 0100
+  - None vmess 0101
   - None vmess 11
   - None vmess 12
   - None vmess 13
@@ -3774,14 +3774,14 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - United States vmess 394
+  - None vmess 394
   - None vmess 395
-  - None vmess 396
+  - United States vmess 396
   - None vmess 397
-  - None vmess 398
+  - United States vmess 398
   - None vmess 399
-  - United States vmess 3100
-  - None vmess 3101
+  - None vmess 3100
+  - United States vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
@@ -3906,10 +3906,10 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - None vmess 098
+  - United States vmess 098
   - None vmess 099
-  - United States vmess 0100
-  - United States vmess 0101
+  - None vmess 0100
+  - None vmess 0101
   - None vmess 11
   - None vmess 12
   - None vmess 13
@@ -4011,14 +4011,14 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - United States vmess 394
+  - None vmess 394
   - None vmess 395
-  - None vmess 396
+  - United States vmess 396
   - None vmess 397
-  - None vmess 398
+  - United States vmess 398
   - None vmess 399
-  - United States vmess 3100
-  - None vmess 3101
+  - None vmess 3100
+  - United States vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
@@ -4143,10 +4143,10 @@ proxy-groups:
   - United States vmess 095
   - None vmess 096
   - None vmess 097
-  - None vmess 098
+  - United States vmess 098
   - None vmess 099
-  - United States vmess 0100
-  - United States vmess 0101
+  - None vmess 0100
+  - None vmess 0101
   - None vmess 11
   - None vmess 12
   - None vmess 13
@@ -4248,14 +4248,14 @@ proxy-groups:
   - United States vmess 391
   - None vmess 392
   - Canada vmess 393
-  - United States vmess 394
+  - None vmess 394
   - None vmess 395
-  - None vmess 396
+  - United States vmess 396
   - None vmess 397
-  - None vmess 398
+  - United States vmess 398
   - None vmess 399
-  - United States vmess 3100
-  - None vmess 3101
+  - None vmess 3100
+  - United States vmess 3101
   - None vmess 41
   - None vmess 42
   - None vmess 43
