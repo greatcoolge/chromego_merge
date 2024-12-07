@@ -75034,12 +75034,12 @@ proxies:
   cipher: auto
   udp: true
   tls: true
-  servername: http1.9290254.xyz
+  servername: http3.9290254.xyz
   network: ws
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: http1.9290254.xyz
+      Host: http3.9290254.xyz
     early-data-header-name: Sec-WebSocket-Protocol
     v2ray-http-upgrade: true
     v2ray-http-upgrade-fast-open: true
@@ -75052,12 +75052,12 @@ proxies:
   cipher: auto
   udp: true
   tls: true
-  servername: http1.9290254.xyz
+  servername: http3.9290254.xyz
   network: ws
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: http1.9290254.xyz
+      Host: http3.9290254.xyz
     early-data-header-name: Sec-WebSocket-Protocol
     v2ray-http-upgrade: true
     v2ray-http-upgrade-fast-open: true
@@ -75070,12 +75070,12 @@ proxies:
   cipher: auto
   udp: true
   tls: true
-  servername: http1.9290254.xyz
+  servername: http3.9290254.xyz
   network: ws
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: http1.9290254.xyz
+      Host: http3.9290254.xyz
     early-data-header-name: Sec-WebSocket-Protocol
     v2ray-http-upgrade: true
     v2ray-http-upgrade-fast-open: true
@@ -75088,12 +75088,12 @@ proxies:
   cipher: auto
   udp: true
   tls: true
-  servername: http1.9290254.xyz
+  servername: http3.9290254.xyz
   network: ws
   ws-opts:
     path: github.com/Alvin9999
     headers:
-      Host: http1.9290254.xyz
+      Host: http3.9290254.xyz
     early-data-header-name: Sec-WebSocket-Protocol
     v2ray-http-upgrade: true
     v2ray-http-upgrade-fast-open: true
